@@ -1,0 +1,53 @@
+Requerimiento del hito 2
+    1. Crear un nuevo proyecto usando npx e instalar las dependencias.
+    (1 Punto)
+
+    2. Utilizar React Router para la navegación entre rutas.
+    (3 Puntos)
+
+    3. Reutilizar componentes haciendo uso del paso de props y renderización dinámica.
+    (1 Punto)
+
+    4. Hacer uso de los hooks para un desarrollo ágil y reactivo.
+    (2 Puntos)
+
+    5. Utilizar Context para el manejo del estado global.
+    (3 Puntos)
+
+Guia
+    colores a ocupar:
+        (Colores a escoger con tematica de tienda, link de apoyo 
+        https://coolors.co/)
+
+    Vistas:(seguir acorde bocetos)
+        Pagina principal
+            Menu de navegacion
+            Seccion con publicidad
+            Seccion con vista de publicaciones
+            footer
+        Registro/inicio
+            Cuadro de inicioy regitro flotante
+        Perfil
+            Menu de navegacion
+            apartado con datos de usuario
+            boton para publicar
+            publicaciones propias
+            favoritos
+            footer
+        PublicacionNueva
+            recuadro para publicacion
+        PublicacionDescripccion
+            datos copletos de la publicacion de manera flotante
+        Favoritos
+            cuadro con favoritos
+
+    Mecanicas:
+        Registro e inicio de usuarios
+        Editar datos de registro usuario
+        Registro de publicaciones
+        Eliminar publicaciones
+        Editar datos de publicacion
+        Ver publicaciones
+        Guardar Favoritos
+        Eliminar favoritso
+        Ver favoritos
