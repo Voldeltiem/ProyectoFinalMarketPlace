@@ -3,7 +3,7 @@ import React from 'react'
 
 function Section() {
   return (
-    <div>Section</div>
+    <div id="section">Section</div>
   )
 }
 

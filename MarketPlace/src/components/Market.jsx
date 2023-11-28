@@ -1,11 +1,12 @@
 //donde se ven la publicaciones en miniatura
 import React from 'react'
-import Card from "./Card"
+import Tarjeta from "./Tarjeta"
 
 function Market() {
   return (
-    <div>
-      <Card/>
+    <div id='market'>
+      <Tarjeta/>
+      <Tarjeta/>
     </div>
   )
 }
