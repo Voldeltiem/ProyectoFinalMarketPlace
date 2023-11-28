@@ -7,7 +7,6 @@ import Footer from "../components/Footer"
 function Inicio() {
   return (
     <div>
-      <Nava/>
       <Section/>
       <Market/>
       <Footer/>
