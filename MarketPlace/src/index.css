@@ -19,10 +19,23 @@
         padding: 5px;
     }
 
+    .imagenDetalle{
+        width: 100%;
+        height: 60vh;
+        object-fit: cover;
+    }
+
     #imagenTarjeta {
         width: 100%;
         height: 25vh;
         object-fit: cover;
+    }
+
+    #login{
+        margin: 30vh 15px 30vh 15px;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 2%;
     }
 
     #footer {
@@ -33,6 +46,7 @@
 
     #menuContainer {
         position: fixed;
+        align-items: center;
         bottom: 0;
         width: 100%;
         background-color: #948989;
