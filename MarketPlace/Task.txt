@@ -18,6 +18,7 @@ Guia
     colores a ocupar:
         (Colores a escoger con tematica de tienda, link de apoyo 
         https://coolors.co/)
+        https://unsplash.com/es para imagenes en buena resolucion
 
     Vistas:(seguir acorde bocetos)
         Pagina principal
