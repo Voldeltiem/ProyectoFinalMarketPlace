@@ -1,4 +1,7 @@
 @media (max-width: 768px) {
+    Link{
+        text-decoration: none;
+    }
     #section {
         display: none;
     }
