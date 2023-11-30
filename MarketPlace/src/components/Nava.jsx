@@ -86,8 +86,8 @@ function Nava() {
       case '/nuevaPublicacion' :
       buttonComponent = (
         <>
-          <Button onClick={publicacionesClick}><FaNewspaper /></Button>
           <Button onClick={perfilClick}><RxAvatar /></Button>
+          <Button onClick={publicacionesClick}><FaNewspaper /></Button>
           <Button onClick={favoritosClick}><FaRegHeart /></Button>
           <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
         </>
@@ -118,7 +118,7 @@ function Nava() {
     <div>
       <div id='menuContainer'>
         <ButtonToolbar aria-label="Toolbar with button groups">
-          <ButtonGroup size='lg' className="me-2 botonFixes" aria-label="First group">
+          <ButtonGroup size='lg' className="me-0 botonFixes" aria-label="First group">
             {buttonComponent}
             <BarraBusqueda
               show={modalShow}
