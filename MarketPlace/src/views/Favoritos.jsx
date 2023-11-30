@@ -1,12 +1,12 @@
 import React from 'react'
 import Nava from "../components/Nava";
 
-function NuevaPublicacion() {
+function Favoritos() {
   return (
     <div>
-      <Nava/>
+        <Nava/>
     </div>
   )
 }
 
-export default NuevaPublicacion
+export default Favoritos

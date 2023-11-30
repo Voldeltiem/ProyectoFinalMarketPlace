@@ -5,6 +5,12 @@ import Button from 'react-bootstrap/Button';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ButtonToolbar from 'react-bootstrap/ButtonToolbar';
 import BarraBusqueda from './BarraBusqueda';
+import { FaMagnifyingGlass } from "react-icons/fa6";
+import { IoMdHome } from "react-icons/io";
+import { RxAvatar } from "react-icons/rx";
+import { FaRegHeart } from "react-icons/fa";
+import { FaNewspaper } from "react-icons/fa6";
+import { FaRegPlusSquare } from "react-icons/fa";
 
 function Nava() {
 
@@ -16,9 +22,95 @@ function Nava() {
   const loginClick = () => {
     navigate("/login")
   }
-const inicioClick = () => {
-  navigate("/")
-}
+  const inicioClick = () => {
+    navigate("/")
+  }
+  const registroClick = () => {
+    navigate("/registro")
+  }
+  const perfilClick = () => {
+    navigate("/perfil")
+  }
+  const favoritosClick = () => {
+    navigate("/favoritos")
+  }
+  const nuevaPublicacionClick = () => {
+    navigate("/nuevaPublicacion")
+  }
+  const detalleClick = () => {
+    navigate("/detallePublicacion")
+  }
+  const publicacionesClick = () => {
+    navigate("/publicaciones")
+  }
+
+  let buttonComponent = null;
+
+  switch (location.pathname) {
+    case "/login":
+      buttonComponent = (
+        <>
+          <Button onClick={inicioClick}><IoMdHome /></Button>
+          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+        </>
+      );
+      break;
+    case '/':
+      buttonComponent = (
+        <>
+          <Button onClick={loginClick}><RxAvatar /></Button>
+          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+        </>
+      );
+      break;
+      case '/perfil':
+      buttonComponent = (
+        <>
+          <Button onClick={publicacionesClick}><FaNewspaper /></Button>
+          <Button onClick={nuevaPublicacionClick}><FaRegPlusSquare /></Button>
+          <Button onClick={favoritosClick}><FaRegHeart /></Button>
+          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+        </>
+      );
+      break;
+      case '/publicaciones' :
+      buttonComponent = (
+        <>
+        <Button onClick={perfilClick}><RxAvatar /></Button>
+          <Button onClick={nuevaPublicacionClick}><FaRegPlusSquare /></Button>
+          <Button onClick={favoritosClick}><FaRegHeart /></Button>
+          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+        </>
+      );
+      break;
+      case '/nuevaPublicacion' :
+      buttonComponent = (
+        <>
+          <Button onClick={publicacionesClick}><FaNewspaper /></Button>
+          <Button onClick={perfilClick}><RxAvatar /></Button>
+          <Button onClick={favoritosClick}><FaRegHeart /></Button>
+          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+        </>
+      );
+      break;
+      case '/favoritos' :
+      buttonComponent = (
+        <>
+          <Button onClick={perfilClick}><RxAvatar /></Button>
+          <Button onClick={publicacionesClick}><FaNewspaper /></Button>
+          <Button onClick={nuevaPublicacionClick}><FaRegPlusSquare /></Button>
+          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+        </>
+      );
+      break;
+    default:
+      buttonComponent = (
+        <>
+          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+        </>
+      );
+      break;
+  }
 
   const [modalShow, setModalShow] = React.useState(false);
 
@@ -27,29 +119,7 @@ const inicioClick = () => {
       <div id='menuContainer'>
         <ButtonToolbar aria-label="Toolbar with button groups">
           <ButtonGroup size='lg' className="me-2 botonFixes" aria-label="First group">
-            {location.pathname === '/login' && location.pathname !== '/perfil'? (//si es igual a login ara lo primero
-              <Button onClick={inicioClick}>
-                Inicio
-              </Button>
-            ) : (//si no es igual a login ara lo segundo
-              <Button onClick={loginClick}>
-                Login
-              </Button>
-            )}
-            {location.pathname === '/perfil' ? (
-              // Mostrar tres botones específicos para la vista de perfil
-              <>
-                <Button>abc</Button>
-                <Button>123</Button>
-                <Button>1bc</Button>
-              </>
-            ) : (
-              // Mostrar el botón de login para otras vistas
-              <Button onClick={loginClick}>
-                Login
-              </Button>
-            )}
-            <Button onClick={() => setModalShow(true)}>Buscar</Button>
+            {buttonComponent}
             <BarraBusqueda
               show={modalShow}
               onHide={() => setModalShow(false)}
