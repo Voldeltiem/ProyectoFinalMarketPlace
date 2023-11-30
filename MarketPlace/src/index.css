@@ -45,6 +45,8 @@
         position: fixed;
         width: 100%;
         text-align: center;
+        bottom: 0;
+        margin-bottom: 45px;
     }
 
     #menuContainer {
@@ -56,5 +58,18 @@
     .botonFixes {
         width: 100%;
         left: 0;
+    }
+
+    #datosPhone{
+        border: 1px solid black;
+        margin: 5px;
+        padding: 5px;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .conteinerDatos{
+        display: flex;
     }
 }
