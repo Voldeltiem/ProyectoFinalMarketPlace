@@ -1,0 +1,74 @@
+{
+    "usuario": [
+        {
+            "id": 1,
+            "nombre": "Juan pedro",
+            "email": "juanpedro@latam.com",
+            "telefono": 56912334566,
+            "password": "1234"
+        },
+
+    {
+            "id": 2,
+            "nombre": "maria jose",
+            "email": "mjose@latam.com",
+            "telefono": 5691233434,
+            "password": "4321"
+        },
+      {
+            "id": 3,
+            "nombre": "mario bros",
+            "email": "mbros@latam.com",
+            "telefono": 5691257263,
+            "password": "100"
+        }
+    ],
+    "producto": [
+        {
+            "id": 1,
+            "nombre": "bicicleta",
+            "descripcion": "pojdfpdfgdf fkgdopk gdk gdfj dfpo dpogdfopgjdfopjg dfdfopdfj g",
+            "precio": "500.000",
+            "id_usuario": "2",
+            "imagen": "https://lectro.cl/cdn/shop/products/slec27bkbk01hm-1eac23e8-13d8-408c-8eeb-8121a934330d_1800x1800.png.jpg?v=1685337189"
+        },
+    {
+            "id": 2,
+            "nombre": "portatil",
+            "descripcion": "pojdfpdfgdf fkgdopk gdk gdfj dfpo dpogdfopgjdfopjg dfdfopdfj g",
+            "precio": "1.000.000",
+            "id_usuario": "2",
+            "imagen": "https://www.reuse.cl/cdn/shop/files/1_6acdec6c-5425-4573-a8e4-5071e18c8c17_644x644.png?v=1688055153"
+        },
+        {
+            "id": 3,
+            "nombre": "billetera",
+            "descripcion": "pojdfpdfgdf fkgdopk gdk gdfj dfpo dpogdfopgjdfopjg dfdfopdfj g",
+            "precio": "1234",
+            "id_usuario": "2",
+            "imagen": "https://limited.cl/cdn/shop/files/Double-Black-1.jpg?v=1697726701&width=720"
+        }
+    ],
+    "favoritos": [
+        {
+            "id": 1,
+            "id.usuario": 2,
+            "id.producto": 2
+        },
+        {
+            "id": 2,
+            "id.usuario": 3,
+            "id.producto": 2
+        },
+        {
+            "id": 3,
+            "id.usuario": 1,
+            "id.producto": 1
+        },
+        {
+            "id": 1,
+            "id.usuario": 2,
+            "id.producto": 1
+        }
+    ]
+}
