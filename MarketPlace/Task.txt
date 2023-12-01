@@ -19,6 +19,7 @@ Guia
         (Colores a escoger con tematica de tienda, link de apoyo 
         https://coolors.co/)
         https://unsplash.com/es para imagenes en buena resolucion
+        https://react-icons.github.io/react-icons/
 
     Vistas:(seguir acorde bocetos)
         Pagina principal
