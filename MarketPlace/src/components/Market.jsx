@@ -7,6 +7,10 @@ function Market() {
     <div id='market'>
       <Tarjeta/>
       <Tarjeta/>
+      <Tarjeta/>
+      <Tarjeta/>
+      <Tarjeta/>
+      <Tarjeta/>
     </div>
   )
 }

@@ -13,11 +13,15 @@
     }
 
     #market {
+        margin-top: 60px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         ;
     }
-
+#tarjetaDetalle{
+    margin: 65px 5px 0px 5px;
+    
+}
     #tarjeta {
         padding: 5px;
     }
@@ -42,11 +46,21 @@
     }
 
     #footer {
-        position: fixed;
         width: 100%;
         text-align: center;
         bottom: 0;
         margin-bottom: 45px;
+    }
+
+    #h1Titulo {
+        position:fixed; 
+        top: 0;
+        width: 100%;
+        background-color: white;
+        border: 1px solid black;
+        margin: 5px;
+        padding: 5px;
+        z-index: 1000;
     }
 
     #menuContainer {
@@ -71,5 +85,8 @@
     }
     .conteinerDatos{
         display: flex;
+    }
+    #salirButtom{
+        margin-top: 10px;
     }
 }

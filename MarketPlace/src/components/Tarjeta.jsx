@@ -1,8 +1,15 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useNavigate } from 'react-router-dom';
 
 function Tarjeta() {
+    const navigate = useNavigate();
+
+    const detalleClick = () => {
+        navigate("/publicacionDetalle")
+    }
+
     return (
         <div id='tarjeta'>
             <Card>
@@ -12,7 +19,7 @@ function Tarjeta() {
                     <Card.Text>
                         $120.98
                     </Card.Text>
-                    <Button variant="primary">Ver mas</Button>
+                    <Button onClick={detalleClick} variant="primary">Ver mas</Button>
                 </Card.Body>
             </Card>
         </div>

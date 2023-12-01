@@ -6,6 +6,9 @@ import Button from 'react-bootstrap/Button';
 function Perfil() {
   return (
     <div>
+      <div id='h1Titulo'>
+        <h1>Perfil</h1>
+      </div>
       <Nava />
       <div>
         <div id='datosPhone'>
@@ -24,8 +27,11 @@ function Perfil() {
           <div className='conteinerDatos'>
             <Button>Cambiar Password</Button>
           </div>
+          <div className='conteinerDatos'>
+            <Button id='salirButtom'>Salir</Button>
+          </div>
         </div>
-        
+
       </div>
     </div>
   )
