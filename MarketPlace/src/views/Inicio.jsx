@@ -8,12 +8,9 @@ import logo from "../assets/TodoMercado-logos_black.png"
 function Inicio() {
   return (
     <div>
-<<<<<<< Updated upstream
-=======
       <div id='h1Titulo'>
         <img id='h1TituloImagen' src={logo} alt="Logo" />
       </div>
->>>>>>> Stashed changes
       <Nava/>
       <Section/>
       <Market/>

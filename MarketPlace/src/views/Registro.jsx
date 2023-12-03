@@ -2,9 +2,6 @@ import React from 'react'
 
 function Registro() {
   return (
-<<<<<<< Updated upstream
-    <div>Registro</div>
-=======
     <div>
       <Nava />
       <div id='h1Titulo'>
@@ -59,7 +56,6 @@ function Registro() {
         <Button className='colorBoton' type="submit">Submit form</Button>
       </Form>
     </div>
->>>>>>> Stashed changes
   )
 }
 
