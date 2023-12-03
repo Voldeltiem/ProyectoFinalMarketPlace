@@ -50,63 +50,71 @@ function Nava() {
     case "/login":
       buttonComponent = (
         <>
-          <Button onClick={inicioClick}><IoMdHome /></Button>
-          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+          <Button className='colorBoton' onClick={inicioClick}><IoMdHome /></Button>
+          <Button className='colorBoton' onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
         </>
       );
       break;
     case '/':
       buttonComponent = (
         <>
-          <Button onClick={loginClick}><RxAvatar /></Button>
-          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+                
+          <Button className='colorBoton' onClick={loginClick}><RxAvatar /></Button>
+          <Button className='colorBoton' onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
         </>
       );
       break;
       case '/perfil':
       buttonComponent = (
         <>
-          <Button onClick={publicacionesClick}><FaNewspaper /></Button>
-          <Button onClick={nuevaPublicacionClick}><FaRegPlusSquare /></Button>
-          <Button onClick={favoritosClick}><FaRegHeart /></Button>
-          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+          <Button className='colorBoton' onClick={publicacionesClick}><FaNewspaper /></Button>
+          <Button className='colorBoton' onClick={nuevaPublicacionClick}><FaRegPlusSquare /></Button>
+          <Button className='colorBoton' onClick={favoritosClick}><FaRegHeart /></Button>
+          <Button className='colorBoton' onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
         </>
       );
       break;
       case '/publicaciones' :
       buttonComponent = (
         <>
-        <Button onClick={perfilClick}><RxAvatar /></Button>
-          <Button onClick={nuevaPublicacionClick}><FaRegPlusSquare /></Button>
-          <Button onClick={favoritosClick}><FaRegHeart /></Button>
-          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+        <Button className='colorBoton' onClick={perfilClick}><RxAvatar /></Button>
+          <Button className='colorBoton' onClick={nuevaPublicacionClick}><FaRegPlusSquare /></Button>
+          <Button className='colorBoton' onClick={favoritosClick}><FaRegHeart /></Button>
+          <Button className='colorBoton' onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+        </>
+      );
+      break;
+      case '/registro' :
+      buttonComponent = (
+        <>
+        <Button className='colorBoton' onClick={loginClick}><RxAvatar /></Button>
         </>
       );
       break;
       case '/nuevaPublicacion' :
       buttonComponent = (
         <>
-          <Button onClick={perfilClick}><RxAvatar /></Button>
-          <Button onClick={publicacionesClick}><FaNewspaper /></Button>
-          <Button onClick={favoritosClick}><FaRegHeart /></Button>
-          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+          <Button className='colorBoton' onClick={perfilClick}><RxAvatar /></Button>
+          <Button className='colorBoton' onClick={publicacionesClick}><FaNewspaper /></Button>
+          <Button className='colorBoton' onClick={favoritosClick}><FaRegHeart /></Button>
+          <Button className='colorBoton' onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
         </>
       );
       break;
       case '/favoritos' :
       buttonComponent = (
         <>
-          <Button onClick={perfilClick}><RxAvatar /></Button>
-          <Button onClick={publicacionesClick}><FaNewspaper /></Button>
-          <Button onClick={nuevaPublicacionClick}><FaRegPlusSquare /></Button>
-          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+          <Button className='colorBoton' onClick={perfilClick}><RxAvatar /></Button>
+          <Button className='colorBoton' onClick={publicacionesClick}><FaNewspaper /></Button>
+          <Button className='colorBoton' onClick={nuevaPublicacionClick}><FaRegPlusSquare /></Button>
+          <Button className='colorBoton' onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
         </>
       );
       break;
     default:
       buttonComponent = (
         <>
-          <Button onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
+          <Button className='colorBoton' onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
         </>
       );
       break;
@@ -118,13 +126,14 @@ function Nava() {
     <div>
       <div id='menuContainer'>
         <ButtonToolbar aria-label="Toolbar with button groups">
-          <ButtonGroup size='lg' className="me-0 botonFixes" aria-label="First group">
+          <ButtonGroup size='lg' className=" botonFixes" >
             {buttonComponent}
-            <BarraBusqueda
+            
+          </ButtonGroup>
+          <BarraBusqueda 
               show={modalShow}
               onHide={() => setModalShow(false)}
             />
-          </ButtonGroup>
         </ButtonToolbar>
       </div>
     </div>

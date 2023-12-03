@@ -12,13 +12,13 @@ function BarraBusqueda(props) {
                 aria-labelledby="contained-modal-title-vcenter"
                 centered
             >
-                <Modal.Body>
+                <Modal.Body className='colorModal'>
                     <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                         <Form.Label>Ingrese que desea buscar</Form.Label>
                         <Form.Control type="email" placeholder="Ejemplo: Patito amarillo" />
                     </Form.Group>
                     <Modal.Footer>
-                        <Button onClick={props.onHide}>Buscar</Button>
+                        <Button className='colorBoton' onClick={props.onHide}>Buscar</Button>
                     </Modal.Footer>
                 </Modal.Body>
 

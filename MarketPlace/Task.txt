@@ -17,6 +17,11 @@ Requerimiento del hito 2
 Guia
     colores a ocupar:
         (Colores a escoger con tematica de tienda, link de apoyo 
+        #5C6A6B
+        #4E7877
+        #224870
+        #2A4494
+        #4EA5D9
         https://coolors.co/)
         https://unsplash.com/es para imagenes en buena resolucion
         https://react-icons.github.io/react-icons/

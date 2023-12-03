@@ -25,10 +25,10 @@ function Perfil() {
             <p>+56912345678</p>
           </div>
           <div className='conteinerDatos'>
-            <Button>Cambiar Password</Button>
+            <Button className='colorBoton'>Cambiar Password</Button>
           </div>
           <div className='conteinerDatos'>
-            <Button id='salirButtom'>Salir</Button>
+            <Button className='colorBoton' id='salirButtom'>Salir</Button>
           </div>
         </div>
 
