@@ -96,9 +96,9 @@
     }
 
     #h1TituloImagen {
-        width: 100%;
+        width: 60%;
         z-index: 1000;
-        height: 7vh;
+        height: 9vh;
         object-fit: cover;
     }
 
@@ -151,11 +151,4 @@
         display: flex;
         justify-content: space-around;
     }
-}
-
-#h1TituloImagen {
-    width: 20%;
-    z-index: 1000;
-    height: 15vh;
-    object-fit: cover;
 }
