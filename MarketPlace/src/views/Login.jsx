@@ -1,8 +1,19 @@
 import React from 'react'
 import Form from 'react-bootstrap/Form';
 import Nava from "../components/Nava"
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router';
 
 function Login() {
+  const navigate = useNavigate()
+
+  const registroClick = ()=>{
+    navigate("/registro")
+  }
+  const inicioClick = ()=>{
+    navigate("/")
+  }
+
   return (
     <div>
       <Nava/>
@@ -17,10 +28,10 @@ function Login() {
             <Form.Control type="password" placeholder="Password" />
           </Form.Group>
           <div id='conteinerButomLogin'>
-            <Button className='colorBoton' variant="primary" type="submit">
+            <Button className='colorBoton' onClick={inicioClick} variant="primary" type="submit">
               Login
             </Button>
-            <Button className='colorBoton' onClick={registroClick} variant="primary" type="submit">
+            <Button className='colorBoton' onClick={registroClick} variant="primary">
               registrar
             </Button>
           </div>

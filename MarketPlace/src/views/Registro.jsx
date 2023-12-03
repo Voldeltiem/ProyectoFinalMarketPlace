@@ -1,6 +1,22 @@
-import React from 'react'
+import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+import Nava from "../components/Nava";
 
 function Registro() {
+  const [validated, setValidated] = useState(false);
+
+  const handleSubmit = (event) => {
+    const form = event.currentTarget;
+    if (form.checkValidity() === false) {
+      event.preventDefault();
+      event.stopPropagation();
+    }
+    setValidated(true);
+  };
+
   return (
     <div>
       <Nava />
@@ -53,7 +69,7 @@ function Registro() {
             <Form.Control.Feedback>con este numero te contactaran!</Form.Control.Feedback>
           </Form.Group>
         </Row>
-        <Button className='colorBoton' type="submit">Submit form</Button>
+        <Button className='colorBoton' type="submit">registrate</Button>
       </Form>
     </div>
   )
