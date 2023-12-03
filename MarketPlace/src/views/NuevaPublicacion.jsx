@@ -7,7 +7,9 @@ function NuevaPublicacion() {
       <div id='h1Titulo'>
         <h1>Perfil</h1>
       </div>
+<<<<<<< Updated upstream
       <Nava/>
+=======
       <Form id='formularioPublicacion' noValidate validated={validated} onSubmit={handleSubmit}>
         <Row className="mb-3">
           <Form.Group as={Col} md="4" controlId="validationCustom01">
@@ -53,6 +55,7 @@ function NuevaPublicacion() {
         <Button className='colorBoton' type="submit">Submit form</Button>
       </Form>
       <Nava />
+>>>>>>> Stashed changes
     </div>
   )
 }

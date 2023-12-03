@@ -12,6 +12,7 @@ function Login() {
             <Form.Label>Email address</Form.Label>
             <Form.Control type="email" placeholder="name@example.com" />
           </Form.Group>
+<<<<<<< Updated upstream
           <Form.Label htmlFor="inputPassword5">Password</Form.Label>
           <Form.Control
             type="password"
@@ -22,6 +23,7 @@ function Login() {
             Your password must be 8-20 characters long, contain letters and numbers,
             and must not contain spaces, special characters, or emoji.
           </Form.Text>
+=======
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
@@ -35,6 +37,7 @@ function Login() {
               registrar
             </Button>
           </div>
+>>>>>>> Stashed changes
         </Form>
       </div>
     </div>
