@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from "../assets/TodoMercado-logos_black.png"
 
-function titulo() {
+function Titulo() {
     return (
         <div id='h1Titulo'>
             <img id='h1TituloImagen' src={logo} alt="Logo" />
@@ -9,4 +9,4 @@ function titulo() {
     )
 }
 
-export default titulo
+export default Titulo

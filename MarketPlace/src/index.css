@@ -16,9 +16,11 @@
 .cardBody {
     background-color: #4EA5D9;
 }
+
 .colorBottomTarjet {
     background-color: #2A4494;
 }
+
 #footer {
     display: flex;
     justify-content: center;
@@ -29,17 +31,56 @@
     bottom: 0;
     z-index: 1000;
     background-color: #2A4494;
+    color: white;
 }
-.navaDesk {
-    background-color: #4E7877;
 
-  }
-  
-  #h1TituloImagen {
-    width: 40%;
+.navaDesk {
+    display: flex;
+    background-color: #244970;
+    height: 20vh;
+    width: 100%;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+
+}
+#h1TituloImagen {
+
+    height: 10vh;
     object-fit: cover;
+}
+#h1Titulo {
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    border: 1.5px solid #5C6A6B;
+    padding: 5px;
+    background-color: #2A4494;
+}
+#tarjetaDetalle {
     
-  }
+    display: flex;
+    align-items: center;
+    background-color:#4E7877 ;
+}
+.imagenDetalle {
+    margin-top: 10px;
+    width: 50%;
+    height: 70vh;
+    object-fit:contain;
+    background-color: #4EA5D9;
+    border-radius: 10px 10px 0px 0px;
+
+}
+.bodytarjetaDetalle {
+    width: 50%;
+    margin-bottom: 10px;
+    background-color: #224870;
+    border:3px solid #2A4494;
+    border-radius: 0px 0px 10px 10px;
+    color: white;
+}
+body {
+    background-color: #4E7877;
+}
 @media (max-width: 768px) {
     .color {
         color: #5C6A6B;
@@ -64,7 +105,6 @@
         grid-template-columns: repeat(2, 1fr);
         ;
         background-color: #4E7877;
-
     }
 
     .cardBody {
@@ -167,7 +207,7 @@
     }
 
     .colorBoton {
-        background-color: #224870;
+        background-color: #244970
     }
 
     .colorModal {
