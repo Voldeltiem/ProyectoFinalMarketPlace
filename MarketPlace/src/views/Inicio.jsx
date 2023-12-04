@@ -13,8 +13,8 @@ function Inicio() {
     <div>
        {!isMobile && <NavaDesk />}
        {!isMobile && <Section />}
-      <Titulo/>
-      <Nava/>
+       {isMobile && <Titulo />}
+       {isMobile && <Nava />}
       <Market/>
       <Footer/>
     </div>
