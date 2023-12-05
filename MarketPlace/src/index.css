@@ -5,7 +5,7 @@
 }
 
 #market {
-    margin-top: 60px;
+    margin-top: 10px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     background-color: #4E7877;
@@ -81,6 +81,47 @@
 body {
     background-color: #4E7877;
 }
+#login {
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid #2A4494;
+    border-radius: 10px;
+    background-color: #5C6A6B;
+}
+#conteinerButomLogin {
+    display: flex;
+    justify-content: flex-start;
+}
+.colorBoton {
+    background-color: #244970;
+    margin: 5px;
+}
+#h1Titulo {
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    background-color: #2A4494;
+}
+#registro {
+    margin: 0px 5px 0px 5px;
+    padding: 5px;
+}
+#datosPhone {
+    margin: 5px;
+    padding: 5px;
+    height: 100vh;
+}
+#formularioPublicacion {
+    position: fixed;
+    margin: 15px;
+}
+h1{
+    font-size:x-large;
+}
+.imagenCarousel{
+    width: 60vh;
+    margin: auto;
+    display: block;
+}
 @media (max-width: 768px) {
     .color {
         color: #5C6A6B;
@@ -153,7 +194,6 @@ body {
     #salirButtom {
         margin-top: 10px;
     }
-
 
     .bodytarjetaDetalle {
         background-color: #224870;

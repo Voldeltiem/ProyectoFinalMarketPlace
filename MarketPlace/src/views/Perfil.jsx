@@ -8,8 +8,7 @@ import NavaDesk from '../components/NavaDesk'
 
 function Perfil() {
   const isMobile = useMediaQuery({ maxWidth: 768 })
-  return (
-    
+  return (  
     <div>
       {!isMobile && <NavaDesk />}
       <div id='h1Titulo'>
@@ -19,16 +18,13 @@ function Perfil() {
       <div>
         <div id='datosPhone'>
           <div className='conteinerDatos'>
-            <p><strong>Usuario:</strong> </p>
-            <p>Susana Horia de la granja</p>
+            <p><strong>Usuario:</strong> Susana Horia de la granja</p>
           </div>
           <div className='conteinerDatos'>
-            <p><strong>Email:</strong> </p>
-            <p>SusanaHoria@lagranja.com</p>
+            <p><strong>Email:</strong> SusanaHoria@lagranja.com</p>
           </div>
           <div className='conteinerDatos'>
-            <p><strong>Phone:</strong> </p>
-            <p>+56912345678</p>
+            <p><strong>Phone:</strong> +56912345678</p>
           </div>
           <div className='conteinerDatos'>
             <Button className='colorBoton'>Cambiar Password</Button>

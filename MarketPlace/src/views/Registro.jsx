@@ -4,9 +4,12 @@ import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
 import Nava from "../components/Nava";
+import NavaDesk from '../components/NavaDesk';
+import { useMediaQuery } from 'react-responsive';
 
 function Registro() {
   const [validated, setValidated] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 768 })
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -19,7 +22,8 @@ function Registro() {
 
   return (
     <div>
-      <Nava />
+      {isMobile && <Nava />}
+      {!isMobile && <NavaDesk />}
       <div id='h1Titulo'>
         <h1>Nuevo Usuario</h1>
       </div>
@@ -43,21 +47,21 @@ function Registro() {
               placeholder="cultivos@naturales.cl"
             />
             <Form.Control.Feedback>este sera tu correo de ingreso!</Form.Control.Feedback>
-            <Form.Group as={Col} md="4" controlId="validationCustom03">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                required
-                type="password"
-                placeholder="tu contraseña"
-              />
-              <br />
-              <Form.Control
-                required
-                type="password"
-                placeholder="repite tu contraseña"
-              />
-              <Form.Control.Feedback>tu contraseña debe tener un lago de 8 caracteres y al menos un numero!</Form.Control.Feedback>
-            </Form.Group>
+          </Form.Group>
+          <Form.Group as={Col} md="4" controlId="validationCustom03">
+            <Form.Label>Password</Form.Label>
+            <Form.Control
+              required
+              type="password"
+              placeholder="tu contraseña"
+            />
+            <br />
+            <Form.Control
+              required
+              type="password"
+              placeholder="repite tu contraseña"
+            />
+            <Form.Control.Feedback>tu contraseña debe tener un lago de 8 caracteres y al menos un numero!</Form.Control.Feedback>
           </Form.Group>
           <Form.Group as={Col} md="4" controlId="validationCustom04">
             <Form.Label>Phone</Form.Label>

@@ -2,21 +2,26 @@ import React from 'react'
 import Form from 'react-bootstrap/Form';
 import Nava from "../components/Nava"
 import Button from 'react-bootstrap/Button';
+import NavaDesk from '../components/NavaDesk';
 import { useNavigate } from 'react-router';
+import { useMediaQuery } from 'react-responsive';
+
 
 function Login() {
   const navigate = useNavigate()
+  const isMobile = useMediaQuery({ maxWidth: 768 })
 
-  const registroClick = ()=>{
+  const registroClick = () => {
     navigate("/registro")
   }
-  const inicioClick = ()=>{
+  const inicioClick = () => {
     navigate("/")
   }
 
   return (
     <div>
-      <Nava/>
+      {isMobile && <Nava />}
+      {!isMobile && <NavaDesk />}
       <div id='login'>
         <Form>
           <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">

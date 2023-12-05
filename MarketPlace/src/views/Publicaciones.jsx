@@ -12,7 +12,7 @@ function Publicaciones() {
         <div>
             {!isMobile && <NavaDesk/>}
             <div id='h1Titulo'>
-                <h1>Perfil</h1>
+                <h1>Publicaciones</h1>
             </div>
             <Market />
             <Footer />

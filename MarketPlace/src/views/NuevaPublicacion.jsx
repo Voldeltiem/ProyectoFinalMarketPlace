@@ -28,7 +28,7 @@ function NuevaPublicacion() {
     <div>
       {!isMobile && <NavaDesk />}
       <div id='h1Titulo'>
-        <h1>Perfil</h1>
+        <h1>Nueva Publicacion</h1>
       </div>
       <Form id='formularioPublicacion' noValidate validated={validated} onSubmit={handleSubmit}>
         <Row className="mb-3">
