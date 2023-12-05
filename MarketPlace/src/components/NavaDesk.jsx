@@ -75,7 +75,7 @@ function NavaDesk() {
       case "/publicaciones":
       linkComponent = (
         <>
-          <Nav.Link onClick={perfilClick} >perfil </Nav.Link>
+          <Nav.Link onClick={perfilClick} >perfil</Nav.Link>
           <Nav.Link onClick={nuevaPublicacionClick} >Nueva Publicacion</Nav.Link>
           <Nav.Link onClick={favoritosClick} >Favoritos</Nav.Link>
         </>

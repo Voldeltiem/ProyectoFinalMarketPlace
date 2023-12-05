@@ -5,9 +5,14 @@ import Button from 'react-bootstrap/Button';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row';
+import NavaDesk from '../components/NavaDesk';
+import { useMediaQuery } from 'react-responsive';
+
 
 function NuevaPublicacion() {
   const [validated, setValidated] = useState(false);
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
@@ -21,6 +26,7 @@ function NuevaPublicacion() {
 
   return (
     <div>
+      {!isMobile && <NavaDesk />}
       <div id='h1Titulo'>
         <h1>Perfil</h1>
       </div>
@@ -59,16 +65,17 @@ function NuevaPublicacion() {
           <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
             <Form.Label>Descripcion producto</Form.Label>
             <Form.Control
-            required
-            type="text"
-            placeholder="agrega una brebe descripcion de tu producto"
-            defaultValue="lampara de color rosa , poco uso" as="textarea" rows={3} />
+              required
+              type="text"
+              placeholder="agrega una brebe descripcion de tu producto"
+              defaultValue="lampara de color rosa , poco uso" as="textarea" rows={3} />
             <Form.Control.Feedback>no se te queda nada?</Form.Control.Feedback>
           </Form.Group>
         </Row>
         <Button className='colorBoton' type="submit">Publicar</Button>
       </Form>
-      <Nava />
+      {isMobile && <Nava />}
+
     </div>
   )
 }

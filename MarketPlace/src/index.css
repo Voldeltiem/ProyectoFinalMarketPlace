@@ -1,3 +1,86 @@
+#imagenTarjeta {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+}
+
+#market {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    background-color: #4E7877;
+    gap: 10px;
+    padding: 10px;
+}
+
+.cardBody {
+    background-color: #4EA5D9;
+}
+
+.colorBottomTarjet {
+    background-color: #2A4494;
+}
+
+#footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 8vh;
+    text-align: center;
+    bottom: 0;
+    z-index: 1000;
+    background-color: #2A4494;
+    color: white;
+}
+
+.navaDesk {
+    display: flex;
+    background-color: #244970;
+    height: 20vh;
+    width: 100%;
+    align-items: center;
+    border-radius: 0px 0px 10px 10px;
+
+}
+#h1TituloImagen {
+
+    height: 10vh;
+    object-fit: cover;
+}
+#h1Titulo {
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+    border: 1.5px solid #5C6A6B;
+    padding: 5px;
+    background-color: #2A4494;
+}
+#tarjetaDetalle {
+    
+    display: flex;
+    align-items: center;
+    background-color:#4E7877 ;
+}
+.imagenDetalle {
+    margin-top: 10px;
+    width: 50%;
+    height: 70vh;
+    object-fit:contain;
+    background-color: #4EA5D9;
+    border-radius: 10px 10px 0px 0px;
+
+}
+.bodytarjetaDetalle {
+    width: 50%;
+    margin-bottom: 10px;
+    background-color: #224870;
+    border:3px solid #2A4494;
+    border-radius: 0px 0px 10px 10px;
+    color: white;
+}
+body {
+    background-color: #4E7877;
+}
 @media (max-width: 768px) {
     .color {
         color: #5C6A6B;
@@ -5,10 +88,6 @@
         color: #224870;
         color: #2A4494;
         color: #4EA5D9;
-    }
-
-    #section {
-        display: none;
     }
 
     #tarjetaDetalle {
@@ -26,7 +105,6 @@
         grid-template-columns: repeat(2, 1fr);
         ;
         background-color: #4E7877;
-
     }
 
     .cardBody {
@@ -100,9 +178,9 @@
     }
 
     #h1TituloImagen {
-        width: 100%;
+        width: 60%;
         z-index: 1000;
-        height: 7vh;
+        height: 9vh;
         object-fit: cover;
     }
 
@@ -129,7 +207,7 @@
     }
 
     .colorBoton {
-        background-color: #224870;
+        background-color: #244970
     }
 
     .colorModal {
@@ -155,11 +233,4 @@
         display: flex;
         justify-content: space-around;
     }
-}
-
-#h1TituloImagen {
-    width: 20%;
-    z-index: 1000;
-    height: 15vh;
-    object-fit: cover;
 }
