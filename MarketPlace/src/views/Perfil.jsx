@@ -7,6 +7,7 @@ import { useContext, useState, useEffect } from "react";
 import Context from "../Context/MyContext";
 import axios from "axios";
 import { useNavigate } from 'react-router';
+import CambiarContraseña from '../components/CambiarContraseña';
 
 
 function Perfil() {
@@ -14,6 +15,7 @@ function Perfil() {
   const isMobile = useMediaQuery({ maxWidth: 768 })
   const { setUsuario: setUsuarioGlobal } = useContext(Context);
   const [usuarioLocal, setUsuarioLocal] = useState({});
+  const [modalShow, setModalShow] = React.useState(false);
 
   const logout = () => {
     setUsuario(null);
@@ -41,6 +43,7 @@ function Perfil() {
     getUsuarioData();
   }, []);
 
+
   return (
     <div>
       {!isMobile && <NavaDesk />}
@@ -60,13 +63,19 @@ function Perfil() {
             <p><strong>Phone:</strong> {usuarioLocal.telefono}</p>
           </div>
           <div className='conteinerDatos'>
-            <Button className='colorBoton'>Cambiar Password</Button>
+            <Button variant="primary" onClick={() => setModalShow(true)}>
+              cambiar contraseña
+            </Button>
           </div>
           <div className='conteinerDatos'>
             <Button className='colorBoton' id='salirButtom' onClick={logout}>Salir</Button>
           </div>
         </div>
-
+        <CambiarContraseña
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+          email={usuarioLocal.email}
+        />
       </div>
     </div>
   )
