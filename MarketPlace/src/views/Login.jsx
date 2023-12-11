@@ -7,21 +7,20 @@ import { useNavigate } from 'react-router';
 import { useMediaQuery } from 'react-responsive';
 import axios from "axios";
 import { useState, useContext } from "react";
+import Context from "../Context/MyContext"
 
 
 
 function Login() {
-  const navigate = useNavigate()
   const isMobile = useMediaQuery({ maxWidth: 768 })
-  const [usuario, setUsuarioLocal] = useState({});
   const { setUsuario } = useContext(Context);
+  const navigate = useNavigate();
+  const [usuario, setUsuarioLocal] = useState({email: "",  // Inicializar el estado con valores predeterminados
+  password: "",});
 
 
   const registroClick = () => {
     navigate("/registro")
-  }
-  const inicioClick = () => {
-    navigate("/")
   }
 
   const handleSetUsuario = ({ target: { value, name } }) => {
@@ -30,18 +29,17 @@ function Login() {
     setUsuarioLocal({ ...usuario, ...field });
   };
 
-  const iniciarSesion = async () => {
+  const iniciarSesion = async (e) => {
+    e.preventDefault();
     const urlServer = "http://localhost:3000";
     const endpoint = "/login";
     const { email, password } = usuario;
     try {
       if (!email || !password) return alert("Email y password obligatorias");
       const { data: token } = await axios.post(urlServer + endpoint, usuario);
-      alert("Usuario identificado con éxito 😀");
       localStorage.setItem("token", token);
       setUsuario()
       navigate("/perfil");
-      
     } catch ({ response: { data: message } }) {
       alert(message + " 🙁");
       console.log(message);

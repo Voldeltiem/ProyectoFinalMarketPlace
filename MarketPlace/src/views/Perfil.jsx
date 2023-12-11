@@ -1,17 +1,47 @@
 import React from 'react'
 import Nava from "../components/Nava";
-import Footer from "../components/Footer"
 import Button from 'react-bootstrap/Button';
 import { useMediaQuery } from 'react-responsive';
 import NavaDesk from '../components/NavaDesk'
 import { useContext, useState, useEffect } from "react";
-import Context from "../Context";
+import Context from "../Context/MyContext";
 import axios from "axios";
+import { useNavigate } from 'react-router';
+
 
 function Perfil() {
-  const { setUsuario: setUsuarioGlobal } = useContext(Context);
+  const navigate = useNavigate();
   const isMobile = useMediaQuery({ maxWidth: 768 })
-  return (  
+  const { setUsuario: setUsuarioGlobal } = useContext(Context);
+  const [usuarioLocal, setUsuarioLocal] = useState({});
+
+  const logout = () => {
+    setUsuario(null);
+    localStorage.removeItem("token");
+    navigate("/");
+  };
+
+  const getUsuarioData = async () => {
+    const urlServer = "http://localhost:3000";
+    const endpoint = "/perfil";
+    const token = localStorage.getItem("token");
+
+    try {
+      const { data } = await axios.get(urlServer + endpoint, {
+        headers: { Authorization: "Bearer " + token },
+      });
+      setUsuarioGlobal(data);
+      setUsuarioLocal(data);
+    } catch ({ response: { data: message } }) {
+      alert(message + " 🙁");
+      console.log(message);
+    }
+  };
+  useEffect(() => {
+    getUsuarioData();
+  }, []);
+
+  return (
     <div>
       {!isMobile && <NavaDesk />}
       <div id='h1Titulo'>
@@ -21,19 +51,19 @@ function Perfil() {
       <div>
         <div id='datosPhone'>
           <div className='conteinerDatos'>
-            <p><strong>Usuario:</strong> Susana Horia de la granja</p>
+            <p><strong>Usuario:</strong> {usuarioLocal.nombre}</p>
           </div>
           <div className='conteinerDatos'>
-            <p><strong>Email:</strong> SusanaHoria@lagranja.com</p>
+            <p><strong>Email:</strong> {usuarioLocal.email}</p>
           </div>
           <div className='conteinerDatos'>
-            <p><strong>Phone:</strong> +56912345678</p>
+            <p><strong>Phone:</strong> {usuarioLocal.telefono}</p>
           </div>
           <div className='conteinerDatos'>
             <Button className='colorBoton'>Cambiar Password</Button>
           </div>
           <div className='conteinerDatos'>
-            <Button className='colorBoton' id='salirButtom'>Salir</Button>
+            <Button className='colorBoton' id='salirButtom' onClick={logout}>Salir</Button>
           </div>
         </div>
 

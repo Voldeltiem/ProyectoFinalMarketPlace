@@ -48,7 +48,6 @@ function Registro() {
       alert("Algo salió mal ...");
       console.log(error);
     console.log(usuario)
-
     }
   };
 

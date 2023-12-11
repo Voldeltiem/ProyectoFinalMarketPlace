@@ -6,7 +6,7 @@ import NuevaPublicacion from "./views/NuevaPublicacion";
 import PublicacionDetalle from "./views/PublicacionDetalle";
 import Favoritos from "./views/Favoritos";
 import Publicaciones from "./views/Publicaciones";
-import MyContext from "./context/MyContext";
+import MyContext from "./Context/MyContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
