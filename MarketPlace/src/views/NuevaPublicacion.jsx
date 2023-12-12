@@ -15,7 +15,8 @@ import Context from '../Context/MyContext';
 function NuevaPublicacion() {
   const [validated, setValidated] = useState(false);
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  const { usuario } = useContext(Context);
+  const usuarioContext = useContext(Context);
+  const { usuario, setUsuario } = usuarioContext;
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -30,14 +31,10 @@ function NuevaPublicacion() {
         const precio = form.elements["validationCustom02"].value;
         const url = form.elements["validationCustom03"].value;
         const descripcion = form.elements["exampleForm.ControlTextarea1"].value;
-        const idUsuario = usuario.id;
-        console.log("ID de usuario:", idUsuario);
-
+        const id = usuario.id_usuario;
 
         const urlServer = "http://localhost:3000";
-        const endpoint = `/nuevaPublicacion/${idUsuario}`;
-        console.log("ID de usuario:", idUsuario);
-
+        const endpoint = `/nuevaPublicacion/${id}`;
 
         // Realiza la solicitud al backend para crear una nueva publicación
         const response = await axios.post(
@@ -46,7 +43,7 @@ function NuevaPublicacion() {
         );
 
         // Maneja la respuesta del servidor
-        console.log(response.data); // Imprime la respuesta del servidor (puedes ajustar según lo necesario)
+        console.log(response.data); // Imprime la respuesta del servidor
       } catch (error) {
         console.error("Error al crear la publicación:", error);
       }

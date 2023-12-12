@@ -13,8 +13,8 @@ import CambiarContraseña from '../components/CambiarContraseña';
 function Perfil() {
   const navigate = useNavigate();
   const isMobile = useMediaQuery({ maxWidth: 768 })
-  const { setUsuario: setUsuarioGlobal } = useContext(Context);
-  const [usuarioLocal, setUsuarioLocal] = useState({});
+  const usuarioContext = useContext(Context);
+  const { usuario = {}, setUsuario } = usuarioContext;
   const [modalShow, setModalShow] = React.useState(false);
 
   const logout = () => {
@@ -32,8 +32,7 @@ function Perfil() {
       const { data } = await axios.get(urlServer + endpoint, {
         headers: { Authorization: "Bearer " + token },
       });
-      setUsuarioGlobal(data);
-      setUsuarioLocal(data);
+      setUsuario(data);
     } catch ({ response: { data: message } }) {
       alert(message + " 🙁");
       console.log(message);
@@ -54,13 +53,13 @@ function Perfil() {
       <div>
         <div id='datosPhone'>
           <div className='conteinerDatos'>
-            <p><strong>Usuario:</strong> {usuarioLocal.nombre}</p>
+            <p><strong>Usuario:</strong> {usuario.nombre}</p>
           </div>
           <div className='conteinerDatos'>
-            <p><strong>Email:</strong> {usuarioLocal.email}</p>
+            <p><strong>Email:</strong> {usuario.email}</p>
           </div>
           <div className='conteinerDatos'>
-            <p><strong>Phone:</strong> {usuarioLocal.telefono}</p>
+            <p><strong>Phone:</strong> {usuario.telefono}</p>
           </div>
           <div className='conteinerDatos'>
             <Button variant="primary" onClick={() => setModalShow(true)}>
@@ -74,7 +73,7 @@ function Perfil() {
         <CambiarContraseña
           show={modalShow}
           onHide={() => setModalShow(false)}
-          email={usuarioLocal.email}
+          email={usuario.email}
         />
       </div>
     </div>
