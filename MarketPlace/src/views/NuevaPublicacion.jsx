@@ -31,15 +31,15 @@ function NuevaPublicacion() {
         const precio = form.elements["validationCustom02"].value;
         const url = form.elements["validationCustom03"].value;
         const descripcion = form.elements["exampleForm.ControlTextarea1"].value;
-        const id = usuario.id_usuario;
+        const id_usuario = usuario.id_usuario;
 
         const urlServer = "http://localhost:3000";
-        const endpoint = `/nuevaPublicacion/${id}`;
+        const endpoint = `/nuevaPublicacion`;
 
         // Realiza la solicitud al backend para crear una nueva publicación
         const response = await axios.post(
           urlServer+endpoint,
-          { nombre_producto, descripcion, precio, url }
+          { nombre_producto, descripcion, precio, id_usuario, url }
         );
 
         // Maneja la respuesta del servidor

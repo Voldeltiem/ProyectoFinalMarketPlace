@@ -43,6 +43,9 @@ function Nava() {
   const publicacionesClick = () => {
     navigate("/publicaciones")
   }
+  const misPublicacionesClick = () => {
+    navigate("/misPublicaciones")
+  }
 
   let buttonComponent = null;
 
@@ -67,7 +70,7 @@ function Nava() {
       case '/perfil':
       buttonComponent = (
         <>
-          <Button className='colorBoton' onClick={publicacionesClick}><FaNewspaper /></Button>
+          <Button className='colorBoton' onClick={misPublicacionesClick}><FaNewspaper /></Button>
           <Button className='colorBoton' onClick={nuevaPublicacionClick}><FaRegPlusSquare /></Button>
           <Button className='colorBoton' onClick={favoritosClick}><FaRegHeart /></Button>
           <Button className='colorBoton' onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
@@ -95,7 +98,7 @@ function Nava() {
       buttonComponent = (
         <>
           <Button className='colorBoton' onClick={perfilClick}><RxAvatar /></Button>
-          <Button className='colorBoton' onClick={publicacionesClick}><FaNewspaper /></Button>
+          <Button className='colorBoton' onClick={misPublicacionesClick}><FaNewspaper /></Button>
           <Button className='colorBoton' onClick={favoritosClick}><FaRegHeart /></Button>
           <Button className='colorBoton' onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
         </>
@@ -105,7 +108,7 @@ function Nava() {
       buttonComponent = (
         <>
           <Button className='colorBoton' onClick={perfilClick}><RxAvatar /></Button>
-          <Button className='colorBoton' onClick={publicacionesClick}><FaNewspaper /></Button>
+          <Button className='colorBoton' onClick={misPublicacionesClick}><FaNewspaper /></Button>
           <Button className='colorBoton' onClick={nuevaPublicacionClick}><FaRegPlusSquare /></Button>
           <Button className='colorBoton' onClick={() => setModalShow(true)}>{<FaMagnifyingGlass/>}</Button>
         </>
