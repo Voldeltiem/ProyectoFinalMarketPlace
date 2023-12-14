@@ -49,7 +49,7 @@ Guia
             cuadro con favoritos
 
     Mecanicas:
-        Registro e inicio de usuarios
+        Registro e inicio de usuarios (COMPLETE)
         Editar datos de registro usuario
         Registro de publicaciones
         Eliminar publicaciones
@@ -58,3 +58,16 @@ Guia
         Guardar Favoritos
         Eliminar favoritso
         Ver favoritos
+
+Faltante:
+    -Innibir el boton de ver mas si no esta logueado.
+    -Implmentar solicitud para ver mas de la publicacion.
+    -Implementar la solisitud para editar la publicacion.
+    -Implementar buscador.
+    -Implementar solicitud para publicaciones del usuario.
+    -Implemtnar script para que salga el corazon en la tarjetas de publicaciones.
+    -Implementar mecanica para guardar favoritos.
+    -Implementar solicitud para publicaciones favoritas del usuario.
+    -Implementar filtros(cantidad de publicaciones por hoja, orden).
+    -Implementar filtro de vistas privadas.
+
