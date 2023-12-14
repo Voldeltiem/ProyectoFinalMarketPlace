@@ -22,35 +22,44 @@ function NuevaPublicacion() {
     event.preventDefault();
 
     const form = event.currentTarget;
+
+    // Obtén los valores del formulario
+    const nombre_producto = form.elements["validationCustom01"].value;
+    const precio = form.elements["validationCustom02"].value;
+    const url = form.elements["validationCustom03"].value;
+    const descripcion = form.elements["exampleForm.ControlTextarea1"].value;
+    const id_usuario = usuario.id_usuario;
+
+    // Validación de datos
+    if (!nombre_producto || !precio || !url || !descripcion) {
+      alert("Por favor, complete todos los campos");
+      return;
+    }
+
+    // Realiza la solicitud al backend solo si la validación del formulario pasa
     if (form.checkValidity() === false) {
       event.stopPropagation();
     } else {
       try {
-        // Obtén los valores del formulario
-        const nombre_producto = form.elements["validationCustom01"].value;
-        const precio = form.elements["validationCustom02"].value;
-        const url = form.elements["validationCustom03"].value;
-        const descripcion = form.elements["exampleForm.ControlTextarea1"].value;
-        const id_usuario = usuario.id_usuario;
-
         const urlServer = "http://localhost:3000";
-        const endpoint = `/nuevaPublicacion`;
+        const endpoint = "/nuevaPublicacion";
 
         // Realiza la solicitud al backend para crear una nueva publicación
         const response = await axios.post(
-          urlServer+endpoint,
+          urlServer + endpoint,
           { nombre_producto, descripcion, precio, id_usuario, url }
         );
 
         // Maneja la respuesta del servidor
-        console.log(response.data); // Imprime la respuesta del servidor
+        console.log(response.data); 
       } catch (error) {
         console.error("Error al crear la publicación:", error);
       }
-    };
+    }
 
     setValidated(true);
   };
+
 
   return (
     <div>
@@ -66,7 +75,7 @@ function NuevaPublicacion() {
               required
               type="text"
               placeholder="Producto"
-        
+
             />
             <Form.Control.Feedback>hacen falta de esos!</Form.Control.Feedback>
           </Form.Group>
@@ -76,7 +85,7 @@ function NuevaPublicacion() {
               required
               type="number"
               placeholder="Valor del producto"
-             
+
             />
             <Form.Control.Feedback>es un buen precio!</Form.Control.Feedback>
           </Form.Group>
@@ -86,7 +95,7 @@ function NuevaPublicacion() {
               required
               type="text"
               placeholder="URL de imagen"
-              
+
             />
             <Form.Control.Feedback>que buena foto!</Form.Control.Feedback>
           </Form.Group>
@@ -96,7 +105,7 @@ function NuevaPublicacion() {
               required
               type="text"
               placeholder="agrega una brebe descripcion de tu producto"
-             as="textarea" rows={3} />
+              as="textarea" rows={3} />
             <Form.Control.Feedback>no se te queda nada?</Form.Control.Feedback>
           </Form.Group>
         </Row>
