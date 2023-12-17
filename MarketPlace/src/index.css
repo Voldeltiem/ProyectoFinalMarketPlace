@@ -4,6 +4,10 @@
         height: 40vh;
         object-fit: cover;
     }
+    .buttonsTarjet {
+        display: flex;
+        justify-content: space-around;
+    }
     
     #market {
         margin-top: 10px;
@@ -125,7 +129,10 @@
     }
 }
 @media (max-width: 768px) {
-
+    .buttonsTarjet {
+        display: flex;
+        justify-content: space-around;
+    }
     #tarjetaDetalle {
         margin: 65px 5px 0px 5px;
 

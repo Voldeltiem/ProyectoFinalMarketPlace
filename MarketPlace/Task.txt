@@ -51,7 +51,7 @@ Guia
     Mecanicas:
         Registro e inicio de usuarios (COMPLETE)
         Editar datos de registro usuario
-        Registro de publicaciones
+        Registro de publicaciones (COMPLETE)
         Eliminar publicaciones
         Editar datos de publicacion
         Ver publicaciones
@@ -60,8 +60,8 @@ Guia
         Ver favoritos
 
 Faltante:
-    -Innibir el boton de ver mas si no esta logueado.
-    -Implmentar solicitud para ver mas de la publicacion.
+    -Innibir el boton de ver mas si no esta logueado. (COMPLETE)
+    -Implmentar solicitud para ver mas de la publicacion. (COMPLETE) falta incluir el numero de contacto
     -Implementar la solisitud para editar la publicacion.
     -Implementar buscador.
     -Implementar solicitud para publicaciones del usuario.

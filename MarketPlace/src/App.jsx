@@ -19,12 +19,14 @@ function App() {
   const [descripcion, setDescripcion] = useState("");
   const [precio, setPrecio] = useState("");
   const [usuario, setUsuario] = useState(null)
+  const [productoDetalle, setProductoDetalle] = useState(null)
+
 
 
   return (
     <>
       <MyContext.Provider
-        value={{ usuario, setUsuario }}
+        value={{ usuario, setUsuario, productoDetalle, setProductoDetalle }}
       >
         <BrowserRouter>
           <Routes>
@@ -37,7 +39,7 @@ function App() {
             <Route path="/misPublicaciones" element={<MisPublicaciones />} />
 
             <Route
-              path="/publicacionDetalle"
+              path="/publicacionDetalle/:id"
               element={<PublicacionDetalle />}
             />
             <Route path="/favoritos" element={<Favoritos />} />
