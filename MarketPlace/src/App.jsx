@@ -12,6 +12,7 @@ import "./index.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import MisPublicaciones from "./views/MisPublicaciones";
+import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   const [idProducto, setIdProducto] = useState("");
@@ -37,11 +38,7 @@ function App() {
             <Route path="/publicaciones" element={<Publicaciones />} />
             <Route path="/nuevaPublicacion" element={<NuevaPublicacion />} />
             <Route path="/misPublicaciones" element={<MisPublicaciones />} />
-
-            <Route
-              path="/publicacionDetalle/:id"
-              element={<PublicacionDetalle />}
-            />
+            <Route path="/publicacionDetalle/:id" element={<PublicacionDetalle />}/>
             <Route path="/favoritos" element={<Favoritos />} />
           </Routes>
         </BrowserRouter>
