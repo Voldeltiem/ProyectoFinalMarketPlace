@@ -12,6 +12,9 @@ function Tarjeta({ producto }) {
     const detalleClick = () => {
         navigate(`/publicacionDetalle/${producto.id_producto}`);
     }
+    const editarPublicaion = () => {
+        navigate(`/editarPublicacion/${producto.id_producto}`)
+    }
     const isButtonDisabled = location.pathname === "/";
     let buttonComponent = null;
     switch (location.pathname) {
@@ -19,7 +22,7 @@ function Tarjeta({ producto }) {
             buttonComponent = (
                 <div className='buttonsTarjet'>
                     <Button className='colorBottomTarjet' onClick={detalleClick} variant="primary">Ver mas</Button>
-                    <Button className='colorBottomTarjet' variant="success">Editar</Button>
+                    <Button className='colorBottomTarjet' onClick={editarPublicaion} variant="success">Editar</Button>
                 </div>
             )
             break;

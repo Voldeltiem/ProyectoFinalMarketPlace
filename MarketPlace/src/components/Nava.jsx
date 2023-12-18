@@ -77,7 +77,7 @@ function Nava() {
         </>
       );
       break;
-      case '/publicaciones' :
+      case '/misPublicaciones' :
       buttonComponent = (
         <>
         <Button className='colorBoton' onClick={perfilClick}><RxAvatar /></Button>

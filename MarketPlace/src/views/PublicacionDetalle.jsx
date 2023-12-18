@@ -12,7 +12,7 @@ function PublicacionDetalle() {
   const [publicacion, setPublicacion] = useState({});
 
   const publicacionesClick = () => {
-    navigate("/publicaciones")
+    navigate("/misPublicaciones")
   }
 
   useEffect(() => {
@@ -40,6 +40,7 @@ function PublicacionDetalle() {
         <Card id='tarjetaDetalle'>
           <Card.Img className='imagenDetalle' variant="top" src={publicacion.url}/>
           <Card.Body id='bodytarjetaDetalle'>
+            <h1>{publicacion.nombre_producto}</h1>
             <h2>{publicacion.precio}</h2>
             <h5>{publicacion.contacto}</h5>
             <Card.Text>

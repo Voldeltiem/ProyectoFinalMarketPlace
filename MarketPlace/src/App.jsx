@@ -13,6 +13,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
 import MisPublicaciones from "./views/MisPublicaciones";
 import PrivateRoute from "./utils/PrivateRoute";
+import EditarPublicacion from "./views/EditarPublicacion";
 
 function App() {
   const [idProducto, setIdProducto] = useState("");
@@ -39,6 +40,7 @@ function App() {
             <Route path="/nuevaPublicacion" element={<NuevaPublicacion />} />
             <Route path="/misPublicaciones" element={<MisPublicaciones />} />
             <Route path="/publicacionDetalle/:id" element={<PublicacionDetalle />}/>
+            <Route path="/editarPublicacion/:id" element={<EditarPublicacion />}/>
             <Route path="/favoritos" element={<Favoritos />} />
           </Routes>
         </BrowserRouter>

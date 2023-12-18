@@ -64,7 +64,7 @@ Faltante:
     -Implmentar solicitud para ver mas de la publicacion. (COMPLETE) falta incluir el numero de contacto
     -Implementar la solisitud para editar la publicacion.
     -Implementar buscador.
-    -Implementar solicitud para publicaciones del usuario.
+    -Implementar solicitud para publicaciones del usuario. (COMPLETE)
     -Implemtnar script para que salga el corazon en la tarjetas de publicaciones.
     -Implementar mecanica para guardar favoritos.
     -Implementar solicitud para publicaciones favoritas del usuario.

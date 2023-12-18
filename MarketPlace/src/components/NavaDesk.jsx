@@ -5,6 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import logo from "../assets/TodoMercado-logos_white_peque.png"
 import { useLocation, useNavigate } from 'react-router';
 import Button from 'react-bootstrap/Button';
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
 
 function NavaDesk() {
@@ -33,10 +34,12 @@ function NavaDesk() {
     navigate("/detallePublicacion")
   }
   const publicacionesClick = () => {
-    navigate("/publicaciones")
+    navigate("/misPublicaciones")
   }
 
   let linkComponent = null;
+
+  let buttonComponent = null;
 
   switch (location.pathname) {
     case "/":
@@ -107,6 +110,7 @@ function NavaDesk() {
       );
       break;
   }
+
   return (
     <div className='navaDesk'>
       <Navbar expand="lg">
