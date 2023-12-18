@@ -19,32 +19,21 @@ function MisPublicaciones() {
     const [productos, setProductos] = useState([]);
 
     const urlServer = "http://localhost:3000";
-    // const endpoint = `/misPublicaciones`;
-    const endpoint = `/`;
+    const endpoint = `/misPublicaciones`;
+    /* const endpoint = `/`;*/
 
     useEffect(() => {
 
-        // const publicacionesDeUSuario = async () => {
-        //     try {
-        //         console.log(id_usuario)
-        //         const response = await axios.post(urlServer + endpoint, id_usuario );
-        //         setProductos(response.data);
-        //     } catch (error) {
-        //         console.error("Error al obtener los productos:", error);
-        //     }
-        // };
-
-        // publicacionesDeUSuario();
-        const fetchData = async () => {
+        const publicacionesDeUSuario = async () => {
             try {
-              const response = await axios.get(urlServer+endpoint);
-              setProductos(response.data);
+                const response = await axios.post(urlServer + endpoint, {id_usuario} );
+                setProductos(response.data);
             } catch (error) {
-              console.error("Error al obtener los productos:", error);
+                console.error("Error al obtener los productos:", error);
             }
-          };
-      
-          fetchData();
+        };
+
+        publicacionesDeUSuario();
     }, []);
     
     return (

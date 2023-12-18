@@ -54,7 +54,7 @@ Guia
         Registro de publicaciones (COMPLETE)
         Eliminar publicaciones
         Editar datos de publicacion
-        Ver publicaciones
+        Ver publicaciones  (COMPLETE)
         Guardar Favoritos
         Eliminar favoritso
         Ver favoritos
@@ -70,4 +70,5 @@ Faltante:
     -Implementar solicitud para publicaciones favoritas del usuario.
     -Implementar filtros(cantidad de publicaciones por hoja, orden).
     -Implementar filtro de vistas privadas.
+    -implementar cierre automatico de pantalla de cambio de clave
 

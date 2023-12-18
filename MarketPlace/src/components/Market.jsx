@@ -6,12 +6,12 @@ function Market({ productos }) {
   // Verifica si productos no es un array
   if (!Array.isArray(productos)) {
     console.error("Error: productos no es un array");
-    return null; // O puedes mostrar un mensaje de error o hacer algo más aquí
+    return null;
   }
   return (
     <div id='market'>
       {productos.map(producto => (
-        <Tarjeta key={producto.id} producto={producto} />
+        <Tarjeta key={producto.id_producto} producto={producto} />
       ))}
     </div>
   )
