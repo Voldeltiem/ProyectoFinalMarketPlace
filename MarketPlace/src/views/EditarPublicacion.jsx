@@ -58,7 +58,7 @@ function EditarPublicacion() {
                     url,
                 });
 
-                navigate('/perfil');
+                navigate('/misPublicaciones');
                 // Maneja la respuesta del servidor
                 console.log(response.data);
             } catch (error) {
@@ -95,10 +95,10 @@ function EditarPublicacion() {
             <div id='h1Titulo'>
                 <h1>Editar publicacion</h1>
             </div>
-            <Form>
-                <Card id='tarjetaDetalle'>
-                    <Card.Img className='imagenDetalle' variant="top" src={publicacion.url} />
-                    <Card.Body id='bodytarjetaDetalle'>
+            <Card id='tarjetaDetalle'>
+                <Card.Img className='imagenDetalle' variant="top" src={publicacion.url} />
+                <Card.Body id='bodytarjetaDetalle'>
+                    <Form noValidate validated={validated} onSubmit={handleSubmit}>
                         <Form.Group as={Col} md='4' controlId='validationCustom01'>
                             <Form.Label>Nombre producto</Form.Label>
                             <Form.Control defaultValue={publicacion.nombre_producto} required type='text' placeholder='Producto' />
@@ -111,7 +111,7 @@ function EditarPublicacion() {
                         </Form.Group>
                         <Form.Group as={Col} md='4' controlId='validationCustom03'>
                             <Form.Label>Imagen del producto</Form.Label>
-                            <Form.Control required type='text' placeholder='URL de imagen' />
+                            <Form.Control defaultValue={publicacion.url} required type='text' placeholder='URL de imagen' />
                             <Form.Control.Feedback>¡Qué buena foto!</Form.Control.Feedback>
                         </Form.Group>
                         <Card.Text>
@@ -123,12 +123,12 @@ function EditarPublicacion() {
 
                         </Card.Text>
                         <Button className='colorBottomTarjet' onClick={publicacionesClick} variant="primary">Volver</Button>
-                        <Button className='colorBoton' disabled variant="success" type='submit'>
+                        <Button className='colorBoton' variant="success" type='submit'>
                             Editar
                         </Button>
-                    </Card.Body>
-                </Card>
-            </Form>
+                    </Form>
+                </Card.Body>
+            </Card>
             {isMobile && <Nava />}
             <Footer />
         </div>
