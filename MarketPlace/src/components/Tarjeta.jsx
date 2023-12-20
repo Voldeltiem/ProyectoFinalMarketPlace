@@ -1,11 +1,12 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import { useLocation, useNavigate} from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import Heart from './Heart';
 
 function Tarjeta({ producto }) {
     const navigate = useNavigate();
-    
+
     const location = useLocation();/**
     * location comprueba la ruta y realiza una funcion segun eso
     */
@@ -39,11 +40,12 @@ function Tarjeta({ producto }) {
             )
             break;
     }
-    
+
 
     return (
         <div id='tarjeta'>
             <Card>
+                <Heart></Heart>
                 <Card.Img id='imagenTarjeta' variant="top" src={producto.url} />
                 <Card.Body className='cardBody'>
                     <Card.Title>{producto.nombre_producto}</Card.Title>

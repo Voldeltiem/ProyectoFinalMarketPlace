@@ -18,7 +18,7 @@ function BarraBusqueda(props) {
                         <Form.Control type="email" placeholder="Ejemplo: Patito amarillo" />
                     </Form.Group>
                     <Modal.Footer>
-                        <Button className='colorBoton' onClick={props.onHide}>Buscar</Button>
+                        <Button className='colorBoton' /*onClick={props.onHide}*/>Buscar</Button>
                     </Modal.Footer>
                 </Modal.Body>
 
