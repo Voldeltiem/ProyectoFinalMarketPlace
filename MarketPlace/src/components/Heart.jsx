@@ -11,7 +11,7 @@ function Heart({ id_usuario, id_producto, isFavoritoInicial }) {
       // Realizar la solicitud Axios para agregar o quitar el favorito según el estado actual
       if (isFavorito) {
         // Si ya está marcado como favorito, quitarlo
-        await axios.delete(`/favoritos/${id_usuario}/${id_producto}`);
+        await axios.delete(`/favoritos`, {id_usuario, id_producto});
       } else {
         // Si no está marcado como favorito, agregarlo
         await axios.post(`/favoritos`, { id_usuario, id_producto });

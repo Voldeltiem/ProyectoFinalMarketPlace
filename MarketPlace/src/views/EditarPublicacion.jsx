@@ -47,14 +47,14 @@ function EditarPublicacion() {
         } else {
             try {
                 const urlServer = 'http://localhost:3000';
-                const endpoint = '/nuevaPublicacion';
+                const endpoint = '/editarPublicacion';
 
-                // Realiza la solicitud al backend para crear una nueva publicación
-                const response = await axios.post(urlServer + endpoint, {
+                // Realiza la solicitud al backend para editar una nueva publicación
+                const response = await axios.put(urlServer + endpoint, {
                     nombre_producto,
                     descripcion,
                     precio,
-                    id_usuario,
+                    id,
                     url,
                 });
 
