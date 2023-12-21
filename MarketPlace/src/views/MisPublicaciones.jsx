@@ -26,7 +26,7 @@ function MisPublicaciones() {
 
         const publicacionesDeUSuario = async () => {
             try {
-              console.log(`el id ${id_usuario} se obtiene al cargar`)
+            //   console.log(`el id ${id_usuario} se obtiene al cargar`)
                 const response = await axios.post(urlServer + endpoint, {id_usuario});
                 setProductos(response.data);
             } catch (error) {

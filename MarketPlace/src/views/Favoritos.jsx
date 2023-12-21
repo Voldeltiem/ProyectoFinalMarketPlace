@@ -12,7 +12,7 @@ import Context from '../Context/MyContext';
 function Favoritos() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
     const usuarioContext = useContext(Context);
-    const { usuario, setUsuario } = usuarioContext;
+    const { usuario, setUsuario, esFavoritos } = usuarioContext;
     const id_usuario = usuario.id_usuario;
 
     const [productos, setProductos] = useState([]);

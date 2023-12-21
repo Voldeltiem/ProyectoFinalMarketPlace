@@ -72,7 +72,7 @@ Faltante:
     -Implementar filtro de vistas privadas.
     -implementar cierre automatico de pantalla de cambio de clave
     -Implementar boton para eliminar la cuenta del usuario
-    -arreglar menu de navegacion vista escritoripo
+    -arreglar menu de navegacion vista escritorio
 
     -backend solicitud para editar datos de usuario(nombre usuario, enail, telefono)
 
