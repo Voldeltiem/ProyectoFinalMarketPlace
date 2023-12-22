@@ -24,6 +24,20 @@ function EditarPublicacion() {
     const { id } = useParams();
     const [publicacion, setPublicacion] = useState({});
 
+    const eliminarPublicacion = async () =>{
+        try {
+            const urlServer = 'http://localhost:3000';
+            const endpoint = `/mispublicaciones/${id}`;
+
+            // Realiza la solicitud al backend para eliminar una publicación
+            const response = await axios.delete(urlServer + endpoint);
+
+            navigate('/misPublicaciones');
+            // Maneja la respuesta del servidor
+        } catch (error) {
+            console.error('Error al elimanar publicacion', error);
+        }
+    }
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -125,9 +139,8 @@ function EditarPublicacion() {
                         </Card.Text>
                         <div className='buttonsTarjet'>
                             <Button className='colorBottomTarjet' onClick={publicacionesClick} variant="primary">Volver</Button>
-                            <Button className='colorBoton' variant="success" type='submit'>
-                                Editar
-                            </Button>
+                            <Button className='colorBoton' variant="success" type='submit'>Editar</Button>
+                            <Button className='colorBoton' variant="danger" onClick={eliminarPublicacion}>Eliminar</Button>
                         </div>
                     </Form>
                 </Card.Body>
