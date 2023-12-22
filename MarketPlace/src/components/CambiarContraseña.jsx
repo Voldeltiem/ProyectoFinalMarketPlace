@@ -4,6 +4,7 @@ import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { useState } from 'react';
 import axios from 'axios';
+import { Navigate } from 'react-router-dom';
 
 function CambiarContraseña({ show, onHide, email }) {
     const [password, setPassword] = useState('');
@@ -28,6 +29,7 @@ function CambiarContraseña({ show, onHide, email }) {
                 urlServer + endpoint,
                 { email, password, newpassword }
             );
+            Navigate("/perfil")
             // Maneja la respuesta del servidor
             console.log(response.data);
         } catch (error) {

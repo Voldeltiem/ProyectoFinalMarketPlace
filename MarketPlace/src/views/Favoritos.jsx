@@ -19,7 +19,7 @@ function Favoritos() {
 
     //se deja mientras funcion para llamr atodas las publicaiones del usuario
     const urlServer = "http://localhost:3000";
-    const endpoint = `/misPublicaciones`;
+    const endpoint = `/favoritos`;
     /* const endpoint = `/`;*/
 
     useEffect(() => {
@@ -27,7 +27,7 @@ function Favoritos() {
         const publicacionesDeUSuario = async () => {
             try {
               console.log(`el id ${id_usuario} se obtiene al cargar`)
-                const response = await axios.post(urlServer + endpoint, {id_usuario});
+                const response = await axios.get(urlServer + endpoint, { params: { id_usuario } });
                 setProductos(response.data);
             } catch (error) {
                 console.error("Error al obtener los productos:", error);

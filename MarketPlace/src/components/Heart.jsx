@@ -5,10 +5,10 @@ import axios from 'axios';
 import { useContext } from 'react';
 import Context from '../Context/MyContext';
 
-function Heart({id_producto, id_usuario}) {
+function Heart({ id_producto, id_usuario }) {
   const urlServer = "http://localhost:3000";
   const endpoint = `/favoritos`;
- 
+
   // console.log(id_producto)
   const usuarioContext = useContext(Context);
   const { esFavoritos, setEsFavoritos } = usuarioContext;
@@ -16,16 +16,20 @@ function Heart({id_producto, id_usuario}) {
   const esFavoritoActual = esFavoritos.some(favorito => favorito.id_producto === id_producto);
   // console.log(`el estado de favoritos es: ${esFavoritoActual}`)
   const heartColor = esFavoritoActual ? 'red' : 'white';
- //verificacion de contendio de favoritos
+  //verificacion de contendio de favoritos
   // console.log('Contenido de esFavoritos:');
   // esFavoritos.forEach(favorito => {
   //   console.log(favorito);
   // });
 
+  const ids = {usuario: id_usuario, producto: id_producto}
+
   const agregarFavorito = async () => {
     try {
       // console.log(`producto: ${id_producto} usuario: ${id_usuario}`);
       const response = await axios.post(urlServer + endpoint, { id_usuario, id_producto });
+      // Actualizar el estado de esFavoritos si es necesario
+      setEsFavoritos([...esFavoritos, { id_producto }]); // Agregar el nuevo favorito al estado
     } catch (error) {
       console.error('Error al gusrdar favoritos del usuario:', error);
     }
@@ -34,7 +38,10 @@ function Heart({id_producto, id_usuario}) {
   const eliminarFavorito = async () => {
     try {
       console.log(`usuario: ${id_usuario} producto: ${id_producto}`)
-      const response = await axios.delete(urlServer + endpoint,  id_usuario + id_producto );
+      const response = await axios.delete(`${urlServer}${endpoint}/${id_usuario}/${id_producto}`);
+      // Actualizar el estado de esFavoritos si es necesario
+      const nuevosFavoritos = esFavoritos.filter(favorito => favorito.id_producto !== id_producto);
+      setEsFavoritos(nuevosFavoritos); // Actualizar el estado excluyendo el favorito eliminado
     } catch (error) {
       console.error('Error al gusrdar favoritos del usuario:', error);
     }
@@ -50,7 +57,7 @@ function Heart({id_producto, id_usuario}) {
   };
 
   return (
-    <FaHeart  className="heartIcon" style={{ color: heartColor }} onClick={handleClick}/>
+    <FaHeart className="heartIcon" style={{ color: heartColor }} onClick={handleClick} />
 
   );
 }

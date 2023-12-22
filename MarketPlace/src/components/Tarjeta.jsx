@@ -41,6 +41,17 @@ function Tarjeta({ producto }) {
                 <Heart id_usuario={usuario.id_usuario} id_producto={producto.id_producto} />
             )
             break;
+            case "/favoritos":
+            buttonComponent = (
+                <div className='buttonsTarjet'>
+                    <Button className='colorBottomTarjet' onClick={detalleClick} variant="primary">Ver mas</Button>
+                    <Button className='colorBottomTarjet' onClick={editarPublicaion} variant="success">Editar</Button>
+                </div>
+            )
+            heartComponent = (
+                <Heart id_usuario={usuario.id_usuario} id_producto={producto.id_producto} />
+            )
+            break;
         case "/publicaciones":
             buttonComponent = (
                 <>

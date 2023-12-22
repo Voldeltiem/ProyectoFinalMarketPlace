@@ -75,7 +75,7 @@ function NavaDesk() {
         </>
       );
       break;
-      case "/publicaciones":
+      case "/misPublicaciones":
       linkComponent = (
         <>
           <Nav.Link onClick={perfilClick} >perfil</Nav.Link>
