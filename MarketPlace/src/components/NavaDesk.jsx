@@ -6,6 +6,9 @@ import logo from "../assets/TodoMercado-logos_white_peque.png"
 import { useLocation, useNavigate } from 'react-router';
 import Button from 'react-bootstrap/Button';
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import BarraBusqueda from './BarraBusqueda';
+import { useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 
 
 function NavaDesk() {
@@ -34,6 +37,9 @@ function NavaDesk() {
     navigate("/detallePublicacion")
   }
   const publicacionesClick = () => {
+    navigate("/publicaciones")
+  }
+  const misPublicacionesClick = () => {
     navigate("/misPublicaciones")
   }
 
@@ -45,85 +51,108 @@ function NavaDesk() {
     case "/":
       linkComponent = (
         <>
-          <Nav.Link onClick={loginClick} >Login</Nav.Link>
-          <Nav.Link onClick={registroClick} >Registrase</Nav.Link>
+          <Nav.Link className='link' onClick={loginClick} >Login</Nav.Link>
+          <Nav.Link className='link' onClick={registroClick} >Registrase</Nav.Link>
+          <Nav.Link className='link' onClick={() => { setModalShow(true) }}>Buscar</Nav.Link>
         </>
       );
       break;
-      case "/login":
+    case "/login":
       linkComponent = (
         <>
-          <Nav.Link onClick={inicioClick} >Inicio</Nav.Link>
-          <Nav.Link onClick={registroClick} >Registrase</Nav.Link>
+          <Nav.Link className='link' onClick={inicioClick} >Inicio</Nav.Link>
+          <Nav.Link className='link' onClick={registroClick} >Registrase</Nav.Link>
         </>
       );
       break;
-      case "/registro":
+    case "/registro":
       linkComponent = (
         <>
-          <Nav.Link onClick={inicioClick} >Inicio</Nav.Link>
-          <Nav.Link onClick={loginClick} >Login</Nav.Link>
+          <Nav.Link className='link' onClick={inicioClick} >Inicio</Nav.Link>
+          <Nav.Link className='link' onClick={loginClick} >Login</Nav.Link>
         </>
       );
       break;
-      case "/perfil":
+    case "/perfil":
       linkComponent = (
         <>
-          <Nav.Link onClick={publicacionesClick} >Publicaiones</Nav.Link>
-          <Nav.Link onClick={nuevaPublicacionClick} >Nueva Publicacion</Nav.Link>
-          <Nav.Link onClick={favoritosClick} >Favoritos</Nav.Link>
+          <Nav.Link className='link' onClick={misPublicacionesClick} >Mis Publicaciones</Nav.Link>
+          <Nav.Link className='link' onClick={nuevaPublicacionClick} >Nueva Publicacion</Nav.Link>
+          <Nav.Link className='link' onClick={favoritosClick} >Favoritos</Nav.Link>
+          <Nav.Link className='link' onClick={() => { setModalShow(true); publicacionesClick() }}>Buscar</Nav.Link>
         </>
       );
       break;
-      case "/misPublicaciones":
+    case "/misPublicaciones":
       linkComponent = (
         <>
-          <Nav.Link onClick={perfilClick} >perfil</Nav.Link>
-          <Nav.Link onClick={nuevaPublicacionClick} >Nueva Publicacion</Nav.Link>
-          <Nav.Link onClick={favoritosClick} >Favoritos</Nav.Link>
+          <Nav.Link className='link' onClick={perfilClick} >Perfil</Nav.Link>
+          <Nav.Link className='link' onClick={nuevaPublicacionClick} >Nueva Publicacion</Nav.Link>
+          <Nav.Link className='link' onClick={favoritosClick} >Favoritos</Nav.Link>
+          <Nav.Link className='link' onClick={() => { setModalShow(true); publicacionesClick() }}>Buscar</Nav.Link>
         </>
       );
       break;
-      case "/nuevaPublicacion":
-        linkComponent = (
-          <>
-            <Nav.Link onClick={perfilClick} >perfil</Nav.Link>
-            <Nav.Link onClick={publicacionesClick} >Publicaciones</Nav.Link>
-            <Nav.Link onClick={favoritosClick} >Favoritos</Nav.Link>
-          </>
-        );
-        break;
-        case "/favoritos":
-        linkComponent = (
-          <>
-            <Nav.Link onClick={perfilClick} >perfil</Nav.Link>
-            <Nav.Link onClick={publicacionesClick} >Publicaciones</Nav.Link>
-            <Nav.Link onClick={nuevaPublicacionClick} >Nueva Publicacion</Nav.Link>
-          </>
-        );
-        break;
+    case "/nuevaPublicacion":
+      linkComponent = (
+        <>
+          <Nav.Link className='link' onClick={perfilClick} >Perfil</Nav.Link>
+          <Nav.Link className='link' onClick={misPublicacionesClick} >Mis Publicaciones</Nav.Link>
+          <Nav.Link className='link' onClick={favoritosClick} >Favoritos</Nav.Link>
+          <Nav.Link className='link' onClick={() => { setModalShow(true); publicacionesClick() }}>Buscar</Nav.Link>
+        </>
+      );
+      break;
+    case "/favoritos":
+      linkComponent = (
+        <>
+          <Nav.Link className='link' onClick={perfilClick} >Perfil</Nav.Link>
+          <Nav.Link className='link' onClick={misPublicacionesClick} >Mis Publicaciones</Nav.Link>
+          <Nav.Link className='link' onClick={nuevaPublicacionClick} >Nueva Publicacion</Nav.Link>
+          <Nav.Link className='link' onClick={() => { setModalShow(true); publicacionesClick() }}>Buscar</Nav.Link>
+        </>
+      );
+      break;
+      case "/publicaciones":
+      linkComponent = (
+        <>
+          <Nav.Link className='link' onClick={perfilClick} >Perfil</Nav.Link>
+          <Nav.Link className='link' onClick={misPublicacionesClick} >Mis Publicaciones</Nav.Link>
+          <Nav.Link className='link' onClick={nuevaPublicacionClick} >Nueva Publicacion</Nav.Link>
+          <Nav.Link className='link' onClick={favoritosClick} >Favoritos</Nav.Link>
+          <Nav.Link className='link' onClick={() => { setModalShow(true); publicacionesClick() }}>Buscar</Nav.Link>
+        </>
+      );
+      break;
     default:
       buttonComponent = (
         <>
-          <Button className='colorBoton' onClick={() => setModalShow(true)}>{<FaMagnifyingGlass />}</Button>
+          <Button className='colorBoton' oonClick={() => { setModalShow(true); publicacionesClick() }}>{<FaMagnifyingGlass />}</Button>
         </>
       );
       break;
   }
+
+  const [modalShow, setModalShow] = React.useState(false);
+  useEffect(() => {
+    if (location.pathname === '/publicaciones') {
+      setModalShow(true);
+    }
+  }, [location.pathname]);
 
   return (
     <div className='navaDesk'>
       <Navbar expand="lg">
         <Container >
           <Navbar.Brand ><img id='h1TituloImagen' src={logo} alt="Logo" /></Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              {linkComponent}
-
-            </Nav>
-          </Navbar.Collapse>
+          <div className='linksNav'>
+            {linkComponent}
+          </div>
         </Container>
+        <BarraBusqueda
+            show={modalShow}
+            onHide={() => setModalShow(false)}
+          />
       </Navbar>
 
     </div>

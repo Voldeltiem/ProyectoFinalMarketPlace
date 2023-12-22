@@ -11,6 +11,8 @@ import axios from 'axios';
 import { useContext } from 'react';
 import Context from '../Context/MyContext';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../components/Footer';
+
 
 function NuevaPublicacion() {
   const [validated, setValidated] = useState(false);
@@ -99,6 +101,7 @@ function NuevaPublicacion() {
         </Button>
       </Form>
       {isMobile && <Nava />}
+
     </div>
   );
 }

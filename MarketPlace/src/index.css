@@ -1,23 +1,32 @@
 @media (min-width: 769px) {
+    .linksNav{
+        display: flex;
+        color: white;
+    }
+    .link{
+        
+        padding: 0px 5px 0px 5px;
+    }
     .heartIcon {
         position: absolute;
-        top: 10px; 
-        right: 10px; 
-        
-        font-size:xx-large;
+        top: 10px;
+        right: 10px;
+
+        font-size: xx-large;
 
     }
-    
+
     #imagenTarjeta {
         width: 100%;
         height: 40vh;
         object-fit: cover;
     }
+
     .buttonsTarjet {
         display: flex;
         justify-content: space-around;
     }
-    
+
     #market {
         margin-top: 10px;
         display: grid;
@@ -26,15 +35,15 @@
         gap: 10px;
         padding: 10px;
     }
-    
+
     .cardBody {
         background-color: #4EA5D9;
     }
-    
+
     .colorBottomTarjet {
         background-color: #2A4494;
     }
-    
+
     #footer {
         display: flex;
         justify-content: center;
@@ -47,7 +56,7 @@
         background-color: #2A4494;
         color: white;
     }
-    
+
     .navaDesk {
         display: flex;
         background-color: #244970;
@@ -55,13 +64,15 @@
         width: 100%;
         align-items: center;
         border-radius: 0px 0px 10px 10px;
-    
+
     }
+
     #h1TituloImagen {
-    
+
         height: 10vh;
         object-fit: cover;
     }
+
     #h1Titulo {
         width: 100%;
         border-radius: 0px 0px 10px 10px;
@@ -69,89 +80,108 @@
         padding: 5px;
         background-color: #2A4494;
     }
+
     #tarjetaDetalle {
-        
+
         display: flex;
         align-items: center;
-        background-color:#4E7877 ;
+        background-color: #4E7877;
     }
+
     .imagenDetalle {
         margin-top: 10px;
         width: 50%;
         height: 70vh;
-        object-fit:contain;
+        object-fit: contain;
         background-color: #4EA5D9;
         border-radius: 10px 10px 0px 0px;
-    
+
     }
+
     #bodytarjetaDetalle {
         width: 50%;
         margin-bottom: 10px;
         background-color: #224870;
-        border:3px solid #2A4494;
+        border: 3px solid #2A4494;
         border-radius: 0px 0px 10px 10px;
         color: white;
     }
+
     body {
         background-color: #4E7877;
     }
+
     #login {
-        margin: 15px;
-        padding: 10px;
+        margin: 25px 20vh ;
+        padding: 0px 15px 0px 15px;
         border: 1px solid #2A4494;
         border-radius: 10px;
         background-color: #5C6A6B;
     }
+
     #conteinerButomLogin {
         display: flex;
         justify-content: flex-start;
     }
+
     .colorBoton {
         background-color: #244970;
         margin: 5px;
     }
+
     #h1Titulo {
         width: 100%;
         border-radius: 0px 0px 10px 10px;
         background-color: #2A4494;
     }
+
     #registro {
-        margin: 0px 5px 0px 5px;
+        margin: 15px 10vh;
         padding: 5px;
     }
+
     #datosPhone {
-        margin: 5px;
+        margin: 15px 5vh;
         padding: 5px;
         height: 100vh;
     }
+
     #formularioPublicacion {
         position: fixed;
-        margin: 15px;
+        margin: 15px 5vh;
+        padding: 5px;
     }
-    h1{
-        font-size:x-large;
+
+    h1 {
+        font-size: x-large;
     }
-    .imagenCarousel{
+
+    .imagenCarousel {
         width: 60vh;
         margin: auto;
         display: block;
     }
 }
+
 @media (max-width: 768px) {
     .heartIcon {
         position: absolute;
-        top: 10px; 
-        right: 10px; 
-        font-size:xx-large;
-        
+        top: 10px;
+        right: 10px;
+        font-size: xx-large;
+
     }
+
     .buttonsTarjet {
         display: flex;
         justify-content: space-around;
     }
+
     #tarjetaDetalle {
         margin: 65px 5px 0px 5px;
-
+        background-color: #224870;
+        border: 3px solid #2A4494;
+        color: white;
     }
 
     #tarjeta {
@@ -286,6 +316,8 @@
     #formularioPublicacion {
         position: fixed;
         margin: 65px 5px 0px 5px;
+        padding: 10px 15px 10px 15px;
+
     }
 
     #conteinerButomLogin {

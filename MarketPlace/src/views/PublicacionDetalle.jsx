@@ -23,6 +23,7 @@ function PublicacionDetalle() {
       try {
         const response = await axios.get(urlServer+endpoint+id);
         setPublicacion(response.data);
+        console.log(response.data)
       } catch (error) {
         console.error("Error al obtener los datos de la publicación:", error);
       }
@@ -41,10 +42,10 @@ function PublicacionDetalle() {
           <Card.Img className='imagenDetalle' variant="top" src={publicacion.url}/>
           <Card.Body id='bodytarjetaDetalle'>
             <h1>{publicacion.nombre_producto}</h1>
-            <h2>{publicacion.precio}</h2>
-            <h5>{publicacion.contacto}</h5>
+            <h2>Precio: ${publicacion.precio}</h2>
+            <h6>Nuemero de contacto: {publicacion.telefono}</h6>
             <Card.Text>
-            {publicacion.descripcion}
+              Descripcion: "{publicacion.descripcion}"
             </Card.Text>
             <Button className='colorBottomTarjet' onClick={publicacionesClick} variant="primary">Volver</Button>
           </Card.Body>

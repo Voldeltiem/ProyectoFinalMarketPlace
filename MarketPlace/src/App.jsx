@@ -23,13 +23,21 @@ function App() {
   const [usuario, setUsuario] = useState(null)
   const [productoDetalle, setProductoDetalle] = useState(null)
   const [esFavoritos, setEsFavoritos] = useState([]);
+  const [productosBuscados, setProductosBuscados] = useState([]);
+  const [productosBase, setProductosBase] = useState([]);
+
 
 
   return (
     <>
       <MyContext.Provider
-        value={{ usuario, setUsuario, productoDetalle, setProductoDetalle, esFavoritos, setEsFavoritos }}
-      >
+        value={{ 
+          usuario, setUsuario, 
+          productoDetalle, setProductoDetalle, 
+          esFavoritos, setEsFavoritos, 
+          productosBuscados, setProductosBuscados,
+          productosBase, setProductosBase
+        }}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Inicio />} />

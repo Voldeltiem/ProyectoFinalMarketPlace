@@ -45,6 +45,7 @@ function Favoritos() {
       </div>
       <Market productos={productos}/>
       {isMobile && <Nava />}
+      <Footer />
     </div>
   )
 }

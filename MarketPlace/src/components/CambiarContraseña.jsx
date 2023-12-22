@@ -10,7 +10,7 @@ function CambiarContraseña({ show, onHide, email }) {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [newpassword, setnewPassword] = useState('');
-
+    const [errorMessage, setErrorMessage] = useState('');
 
     const cambiarPass = async () => {
         try {
@@ -29,8 +29,14 @@ function CambiarContraseña({ show, onHide, email }) {
                 urlServer + endpoint,
                 { email, password, newpassword }
             );
-            Navigate("/perfil")
-            // Maneja la respuesta del servidor
+            // Verifica si la respuesta es válida antes de cerrar el modal
+            if (response.data.valid) {
+                setErrorMessage(''); // Borra el mensaje de error si existe
+                onHide(); // Cierra el modal
+                Navigate("/perfil"); // Redirige a la página de perfil si es necesario
+            } else {
+                setErrorMessage('Error al cambiar la contraseña');
+            }
             console.log(response.data);
         } catch (error) {
             console.error("Error al cambiar la contraseña:", error);

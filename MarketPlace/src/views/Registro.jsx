@@ -8,6 +8,8 @@ import Nava from "../components/Nava";
 import NavaDesk from '../components/NavaDesk';
 import { useMediaQuery } from 'react-responsive';
 import axios from "axios";
+import Footer from '../components/Footer';
+
 
 
 function Registro() {
@@ -111,6 +113,7 @@ function Registro() {
         </Row>
         <Button className='colorBoton' onClick={registrarUsuario}>registrate</Button>
       </Form>
+      <Footer />
     </div>
   )
 }

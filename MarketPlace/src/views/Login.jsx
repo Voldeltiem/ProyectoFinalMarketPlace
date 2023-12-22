@@ -8,6 +8,8 @@ import { useMediaQuery } from 'react-responsive';
 import axios from "axios";
 import { useState, useContext } from "react";
 import Context from "../Context/MyContext"
+import Footer from '../components/Footer';
+
 
 
 
@@ -41,7 +43,7 @@ function Login() {
       setUsuario()
       navigate("/perfil");
     } catch ({ response: { data: message } }) {
-      alert(message + " 🙁");
+      alert("Usuario o contraseña Incorrectos");
       console.log(message);
     }
   };
@@ -79,6 +81,8 @@ function Login() {
           </div>
         </Form>
       </div>
+      <Footer />
+
     </div>
   )
 }

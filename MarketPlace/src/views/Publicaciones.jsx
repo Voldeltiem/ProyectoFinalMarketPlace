@@ -4,20 +4,44 @@ import Market from '../components/Market'
 import Footer from "../components/Footer"
 import { useMediaQuery } from 'react-responsive';
 import NavaDesk from "../components/NavaDesk";
+import { useEffect, useState } from 'react';
+import axios from 'axios';  // Importa Axios
+import { useContext } from 'react';
+import Context from '../Context/MyContext';
 
 function Publicaciones() {
     const isMobile = useMediaQuery({ maxWidth: 768 });
+    const usuarioContext = useContext(Context);
+    const { productosBuscados, setProductosBuscados, productosBase, setProductosBase } = usuarioContext; //estado global
+    const [productos, setProductos] = useState([]);
+    const [marketKey, setMarketKey] = useState(0); // Estado local para cambiar la clave
+
+    const urlServer = "http://localhost:3000";
+    const endpoint = `/`;
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(urlServer + endpoint);
+                setProductosBase(response.data);
+                setProductos(response.data);
+            } catch (error) {
+                console.error("Error al obtener los productos:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <div>
-            {!isMobile && <NavaDesk/>}
+            {!isMobile && <NavaDesk />}
             <div id='h1Titulo'>
                 <h1>Publicaciones</h1>
             </div>
-            <Market />
+            <Market productos={productosBuscados}/>
             <Footer />
             {isMobile && <Nava />}
-
         </div>
     )
 }

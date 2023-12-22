@@ -14,6 +14,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useContext } from 'react';
 import Context from '../Context/MyContext';
 
+
 function EditarPublicacion() {
     const [validated, setValidated] = useState(false);
     const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -122,10 +123,12 @@ function EditarPublicacion() {
                             </Form.Group>
 
                         </Card.Text>
-                        <Button className='colorBottomTarjet' onClick={publicacionesClick} variant="primary">Volver</Button>
-                        <Button className='colorBoton' variant="success" type='submit'>
-                            Editar
-                        </Button>
+                        <div className='buttonsTarjet'>
+                            <Button className='colorBottomTarjet' onClick={publicacionesClick} variant="primary">Volver</Button>
+                            <Button className='colorBoton' variant="success" type='submit'>
+                                Editar
+                            </Button>
+                        </div>
                     </Form>
                 </Card.Body>
             </Card>

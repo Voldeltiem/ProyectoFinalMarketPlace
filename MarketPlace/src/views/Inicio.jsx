@@ -8,9 +8,15 @@ import Titulo from '../components/Titulo'
 import { useMediaQuery } from 'react-responsive';
 import { useEffect, useState } from 'react';
 import axios from 'axios';  // Importa Axios
+import { useContext } from 'react';
+import Context from '../Context/MyContext';
+
 
 function Inicio() {
+  const usuarioContext = useContext(Context);
+  const { productosBuscados, setProductosBuscados, productosBase, setProductosBase } = usuarioContext; //estado global
   const [productos, setProductos] = useState([]);
+  const [marketKey, setMarketKey] = useState(0); // Estado local para cambiar la clave
   const isMobile = useMediaQuery({ maxWidth: 768 })
 
   const urlServer = "http://localhost:3000";
@@ -19,8 +25,11 @@ function Inicio() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(urlServer+endpoint);
+        const response = await axios.get(urlServer + endpoint);
+        setProductosBase(response.data);
         setProductos(response.data);
+        // Actualizar la clave del componente Market cada vez que hay nuevos datos
+        setMarketKey((prevKey) => prevKey + 1);
       } catch (error) {
         console.error("Error al obtener los productos:", error);
       }
@@ -35,7 +44,7 @@ function Inicio() {
       {!isMobile && <Section />}
       {isMobile && <Titulo />}
       {isMobile && <Nava />}
-      <Market productos={productos} />
+      <Market key={marketKey} productos={productosBuscados} />
       <Footer />
     </div>
   )

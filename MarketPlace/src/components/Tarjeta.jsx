@@ -45,7 +45,6 @@ function Tarjeta({ producto }) {
             buttonComponent = (
                 <div className='buttonsTarjet'>
                     <Button className='colorBottomTarjet' onClick={detalleClick} variant="primary">Ver mas</Button>
-                    <Button className='colorBottomTarjet' onClick={editarPublicaion} variant="success">Editar</Button>
                 </div>
             )
             heartComponent = (
@@ -58,10 +57,13 @@ function Tarjeta({ producto }) {
                     <Button className='colorBottomTarjet' onClick={detalleClick} variant="primary" disabled={isButtonDisabled}>Ver mas</Button>
                 </>
             )
+            heartComponent = (
+                <Heart id_usuario={usuario.id_usuario} id_producto={producto.id_producto} />
+            )
             break;
         default:
             buttonComponent = (
-                <Button className='colorBottomTarjet' onClick={detalleClick} variant="primary" disabled={isButtonDisabled}>Ver mas</Button>
+                <Button className='colorBottomTarjet' onClick={detalleClick} variant="primary" disabled={isButtonDisabled}>(Deve logear para ver mas)</Button>
             )
             heartComponent = (
                 <></>

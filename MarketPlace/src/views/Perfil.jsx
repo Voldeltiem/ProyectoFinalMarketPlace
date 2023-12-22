@@ -8,7 +8,7 @@ import Context from "../Context/MyContext";
 import axios from "axios";
 import { useNavigate } from 'react-router';
 import CambiarContraseña from '../components/CambiarContraseña';
-
+import Footer from '../components/Footer';
 
 function Perfil() {
   const navigate = useNavigate();
@@ -76,6 +76,8 @@ function Perfil() {
           email={usuario.email}
         />
       </div>
+      <Footer />
+
     </div>
   )
 }
