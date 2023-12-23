@@ -18,7 +18,7 @@ function MisPublicaciones() {
 
     const [productos, setProductos] = useState([]);
 
-    const urlServer = "https://todomercado.netlify.app";
+    const urlServer = "https://todomercado.onrender.com";
     const endpoint = `/misPublicaciones`;
     /* const endpoint = `/`;*/
 

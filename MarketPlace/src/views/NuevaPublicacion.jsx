@@ -44,7 +44,7 @@ function NuevaPublicacion() {
       event.stopPropagation();
     } else {
       try {
-        const urlServer = 'https://todomercado.netlify.app';
+        const urlServer = 'https://todomercado.onrender.com';
         const endpoint = '/nuevaPublicacion';
 
         // Realiza la solicitud al backend para crear una nueva publicación

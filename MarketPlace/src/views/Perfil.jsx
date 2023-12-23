@@ -24,7 +24,7 @@ function Perfil() {
   };
 
   const getUsuarioData = async () => {
-    const urlServer = "https://todomercado.netlify.app";
+    const urlServer = "https://todomercado.onrender.com";
     const endpoint = "/perfil";
     const token = localStorage.getItem("token");
 

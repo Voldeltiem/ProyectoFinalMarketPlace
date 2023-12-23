@@ -18,7 +18,7 @@ function Favoritos() {
     const [productos, setProductos] = useState([]);
 
     //se deja mientras funcion para llamr atodas las publicaiones del usuario
-    const urlServer = "https://todomercado.netlify.app";
+    const urlServer = "https://todomercado.onrender.com";
     const endpoint = `/favoritos`;
     /* const endpoint = `/`;*/
 

@@ -16,7 +16,7 @@ function PublicacionDetalle() {
   }
 
   useEffect(() => {
-    const urlServer = "https://todomercado.netlify.app";
+    const urlServer = "https://todomercado.onrender.com";
     const endpoint = `/publicacionDetalle/`;
 
     const fetchData = async () => {

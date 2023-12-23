@@ -61,7 +61,7 @@ function EditarPublicacion() {
             event.stopPropagation();
         } else {
             try {
-                const urlServer = 'https://todomercado.netlify.app';
+                const urlServer = 'https://todomercado.onrender.com';
                 const endpoint = '/editarPublicacion';
 
                 // Realiza la solicitud al backend para editar una nueva publicación
@@ -89,7 +89,7 @@ function EditarPublicacion() {
     }
 
     useEffect(() => {
-        const urlServer = "https://todomercado.netlify.app";
+        const urlServer = "https://todomercado.onrender.com";
         const endpoint = `/publicacionDetalle/`;
 
         const fetchData = async () => {
