@@ -63,7 +63,7 @@ function Tarjeta({ producto }) {
             break;
         default:
             buttonComponent = (
-                <Button className='colorBottomTarjet' onClick={detalleClick} variant="primary" disabled={isButtonDisabled}>(Deve logear para ver mas)</Button>
+                <Button className='colorBottomTarjet' onClick={detalleClick} variant="primary" disabled={isButtonDisabled}>(Debe logear para ver mas)</Button>
             )
             heartComponent = (
                 <></>
