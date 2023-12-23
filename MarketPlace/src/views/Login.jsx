@@ -19,8 +19,10 @@ function Login() {
   const usuarioContext = useContext(Context);
   const { token, setToken } = usuarioContext;
   const navigate = useNavigate();
-  const [usuario, setUsuarioLocal] = useState({email: "", 
-  password: "",});
+  const [usuario, setUsuarioLocal] = useState({
+    email: "",
+    password: "",
+  });
 
 
   const registroClick = () => {
@@ -71,7 +73,7 @@ function Login() {
             <Form.Control value={usuario.password}
               onChange={handleSetUsuario}
               type="password"
-              name="password" 
+              name="password"
               placeholder="Password" />
           </Form.Group>
           <div id='conteinerButomLogin'>
