@@ -16,8 +16,10 @@ import Footer from '../components/Footer';
 function Login() {
   const isMobile = useMediaQuery({ maxWidth: 768 })
   const { setUsuario } = useContext(Context);
+  const usuarioContext = useContext(Context);
+  const { token, setToken } = usuarioContext;
   const navigate = useNavigate();
-  const [usuario, setUsuarioLocal] = useState({email: "",  // Inicializar el estado con valores predeterminados
+  const [usuario, setUsuarioLocal] = useState({email: "", 
   password: "",});
 
 
@@ -40,6 +42,7 @@ function Login() {
       if (!email || !password) return alert("Email y password obligatorias");
       const { data: token } = await axios.post(urlServer + endpoint, usuario);
       localStorage.setItem("token", token);
+      setToken(token)
       setUsuario()
       navigate("/perfil");
     } catch ({ response: { data: message } }) {

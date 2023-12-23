@@ -25,34 +25,39 @@ function App() {
   const [esFavoritos, setEsFavoritos] = useState([]);
   const [productosBuscados, setProductosBuscados] = useState([]);
   const [productosBase, setProductosBase] = useState([]);
+  const [token, setToken] = useState([]);
+
 
 
 
   return (
     <>
       <MyContext.Provider
-        value={{ 
-          usuario, setUsuario, 
-          productoDetalle, setProductoDetalle, 
-          esFavoritos, setEsFavoritos, 
+        value={{
+          usuario, setUsuario,
+          productoDetalle, setProductoDetalle,
+          esFavoritos, setEsFavoritos,
           productosBuscados, setProductosBuscados,
-          productosBase, setProductosBase
+          productosBase, setProductosBase,
+          token, setToken
         }}>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Inicio />} />
             <Route path="/login" element={<Login />} />
             <Route path="/registro" element={<Registro />} />
-            <Route path="/perfil" element={<Perfil />} />
-            <Route path="/publicaciones" element={<Publicaciones />} />
-            <Route path="/nuevaPublicacion" element={<NuevaPublicacion />} />
-            <Route path="/misPublicaciones" element={<MisPublicaciones />} />
-            <Route path="/publicacionDetalle/:id" element={<PublicacionDetalle />}/>
-            <Route path="/editarPublicacion/:id" element={<EditarPublicacion />}/>
-            <Route path="/favoritos" element={<Favoritos />} />
+            <Route path="/" element={<PrivateRoute />}>
+              <Route path="/perfil" element={<Perfil />} />
+              <Route path="/publicaciones" element={<Publicaciones />} />
+              <Route path="/nuevaPublicacion" element={<NuevaPublicacion />} />
+              <Route path="/misPublicaciones" element={<MisPublicaciones />} />
+              <Route path="/publicacionDetalle/:id" element={<PublicacionDetalle />} />
+              <Route path="/editarPublicacion/:id" element={<EditarPublicacion />} />
+              <Route path="/favoritos" element={<Favoritos />} />
+            </Route>
           </Routes>
-        </BrowserRouter>
-      </MyContext.Provider>
+      </BrowserRouter>
+    </MyContext.Provider >
     </>
   );
 }
