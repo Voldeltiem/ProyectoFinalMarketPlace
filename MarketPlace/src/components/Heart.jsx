@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import Context from '../Context/MyContext';
 
 function Heart({ id_producto, id_usuario }) {
-  const urlServer = "http://localhost:3000";
+  const urlServer = "https://todomercado.netlify.app";
   const endpoint = `/favoritos`;
 
   // console.log(id_producto)

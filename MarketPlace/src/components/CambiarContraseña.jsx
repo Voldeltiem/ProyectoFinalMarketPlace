@@ -14,7 +14,7 @@ function CambiarContraseña({ show, onHide, email }) {
 
     const cambiarPass = async () => {
         try {
-            const urlServer = "http://localhost:3000";
+            const urlServer = "https://todomercado.netlify.app";
             const endpoint = "/perfil";
 
             // Validar que las contraseñas coincidan

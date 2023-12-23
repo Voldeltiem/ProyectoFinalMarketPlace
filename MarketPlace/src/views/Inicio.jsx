@@ -19,7 +19,7 @@ function Inicio() {
   const [marketKey, setMarketKey] = useState(0); // Estado local para cambiar la clave
   const isMobile = useMediaQuery({ maxWidth: 768 })
 
-  const urlServer = "http://localhost:3000";
+  const urlServer = "https://todomercado.netlify.app";
   const endpoint = `/`;
 
   useEffect(() => {

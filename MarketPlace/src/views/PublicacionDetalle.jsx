@@ -16,7 +16,7 @@ function PublicacionDetalle() {
   }
 
   useEffect(() => {
-    const urlServer = "http://localhost:3000";
+    const urlServer = "https://todomercado.netlify.app";
     const endpoint = `/publicacionDetalle/`;
 
     const fetchData = async () => {

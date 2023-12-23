@@ -11,7 +11,7 @@ import axios from 'axios';
 function Market({ productos }) {
   const usuarioContext = useContext(Context);
   const { usuario, setUsuario, esFavoritos, setEsFavoritos } = usuarioContext;
-  const urlServer = "http://localhost:3000";
+  const urlServer = "https://todomercado.netlify.app";
   const endpoint = `/favoritosusuario`;
 
   // Verifica si productos no es un array

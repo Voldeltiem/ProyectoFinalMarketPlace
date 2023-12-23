@@ -16,7 +16,7 @@ function Publicaciones() {
     const [productos, setProductos] = useState([]);
     const [marketKey, setMarketKey] = useState(0); // Estado local para cambiar la clave
 
-    const urlServer = "http://localhost:3000";
+    const urlServer = "https://todomercado.netlify.app";
     const endpoint = `/`;
 
     useEffect(() => {

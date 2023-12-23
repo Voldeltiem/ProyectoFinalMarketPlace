@@ -40,7 +40,7 @@ function Registro() {
   };
 
   const registrarUsuario = async () => {
-    const urlServer = "http://localhost:3000";
+    const urlServer = "https://todomercado.netlify.app";
     const endpoint = "/registro";
     try {
       await axios.post(urlServer + endpoint, usuario);

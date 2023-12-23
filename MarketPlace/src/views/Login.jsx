@@ -37,7 +37,7 @@ function Login() {
 
   const iniciarSesion = async (e) => {
     e.preventDefault();
-    const urlServer = "http://localhost:3000";
+    const urlServer = "https://todomercado.netlify.app";
     const endpoint = "/login";
     const { email, password } = usuario;
     try {
